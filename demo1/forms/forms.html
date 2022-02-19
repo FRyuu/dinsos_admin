@@ -192,7 +192,7 @@
 								<i class="flaticon-right-arrow"></i>
 							</li>
 							<li class="nav-item">
-								<a href="#">Basic Form</a>
+								<a href="#">Data Disabilitas</a>
 							</li>
 						</ul>
 					</div>
@@ -200,14 +200,192 @@
 						<div class="col-md-12">
 							<div class="card">
 								<div class="card-header">
-									<div class="card-title">Form Elements</div>
+									<div class="card-title">Data Disabilitas</div>
 								</div>
 								<div class="card-body">
 									<div class="row">
 										<div class="col-xl-4">
 											<div class="form-group">
 												<label for="nama">Nama</label>
-												<input type="nama" class="form-control" id="nama" placeholder="Masukkan Nama Lengkap">
+												<input type="text" class="form-control" id="nama" placeholder="Masukkan Nama Lengkap">
+											</div>
+											<div class="form-group" style="width: 200px;">
+												<label for="umur">Umur</label>
+												<div class="input-group mb-3">
+													<input type="number" class="form-control" placeholder="1" aria-label="1" aria-describedby="ad1">
+													<div class="input-group-append">
+														<span class="input-group-text" id="ad1">Tahun</span>
+													</div>
+												</div>
+											</div>
+											<div class="form-group">
+												<label for="jd">Jenis Disabilitas</label>
+												<select class="form-control" id="jd">
+													<option>-</option>
+													<option>PDFSK (Penyandang Disabilitas Fisik) </option>
+													<option>PDINT (Penyandang Disabilitas Intelektual)< /option>
+													<option>PDMTL (Penyandang Disabilitas Mental) </option>
+													<option>PDSNS (Penyandang Disabilitas Sensorik) </option>
+												</select>
+											</div>
+											<div class="form-group">
+												<label for="penyebab">Penyebab Disabilitas</label>
+												<input type="text" class="form-control" id="penyebab">
+											</div>	
+											<div class="form-group">
+												<label for="status">Status Kawin</label>
+												<select class="form-control" id="status">
+													<option>Belum Kawin</option>
+													<option>Kawin</option>
+												</select>
+											</div>
+											<div class="form-group">
+												<label for="program">Program Bantuan Pemerintah</label>
+												<input type="text" class="form-control" id="program">
+											</div>
+											<div class="form-group">
+												<label for="kerja3">Pekerjaan Ibu</label>
+												<input type="text" class="form-control" id="kerja3" placeholder="Pekerjaan Sesuai KK">
+											</div>
+											<div class="form-group">
+												<label for="wali">Nama Wali</label>
+												<input type="text" class="form-control" id="wali" placeholder="Jika Ada">
+											</div>
+											<div class="form-group">
+												<label for="bantuan">Bantuan yg Dibutuhkan</label>
+												<input type="text" class="form-control" id="bantuan">
+											</div>								
+										</div>
+										<div class="col-xl-4">
+											<div class="form-group">
+												<label for="tpl">Tempat Lahir</label>
+												<input type="text" class="form-control" id="tpl" placeholder="Tempat Lahir Sesuai KK">
+											</div>
+											<div class="form-group">
+												<label for="nik">NIK</label>
+												<input type="number" class="form-control" id="nik" placeholder="No NIK Sesuai KK">
+											</div>
+											<div class="form-group" style="padding-top: 17px;padding-bottom: 12px;">
+												<label for="img">Gambar Disabilitas</label>
+												<div class="input-group col-xs-12">
+													<input type="text" class="form-control file-upload-info" disabled="" placeholder="Upload Foto">
+													<span class="input-group-append">
+														<button class="file-upload-browse btn btn-primary" type="button">Upload</button>
+													</span>
+												</div>
+											</div>
+											<div class="form-group">
+												<label for="agama">Agama</label>
+												<select class="form-control" id="agama">
+													<option>-</option>
+													<option>Islam</option>
+													<option>Protestan</option>
+													<option>Katolik</option>
+													<option>Hindu</option>
+													<option>Buddha</option>
+												</select>
+											</div>
+											<div class="form-group">
+												<label for="alamat">Alamat</label>
+												<input type="text" class="form-control" id="alamat" placeholder="Alamat Sesuai KK">
+											</div>
+											<div class="form-group">
+												<label for="kerja">Pekerjaan Disabilitas</label>
+												<input type="text" class="form-control" id="kerja" placeholder="Pekerjaan Sesuai KK">
+											</div>
+											<div class="form-group">
+												<label for="rp">Penghasilan Disabilitas</label>
+												<div class="input-group">
+													<div class="input-group-prepend">
+														<span class="input-group-text">Rp.</span>
+													</div>
+													<input type="number" class="form-control" aria-label="banyak (dalam bentuk rupiah)">
+													<div class="input-group-append">
+														<span class="input-group-text">.00</span>
+													</div>
+												</div>
+											</div>
+											<div class="form-group">
+												<label for="kerja4">Pekerjaan Wali</label>
+												<input type="text" class="form-control" id="kerja4" placeholder="Pekerjaan Wali Jika ada">
+											</div>
+											<div class="form-group">
+												<label for="ppks">PPKS Tinggal Bersama</label>
+												<input type="text" class="form-control" id="ppks">
+											</div>
+										</div>
+										<div class="col-xl-4">
+											<div class="form-group">
+												<label for="tgl">Tanggal Lahir</label>
+												<input type="date" class="form-control" id="tgl">
+											</div>
+											<div class="form-group">
+												<label class="form-label">Jenis Kelamin</label>
+												<div class="selectgroup w-100">
+													<label class="selectgroup-item">
+														<input type="radio" name="value" value="50" class="selectgroup-input" checked="">
+														<span class="selectgroup-button">Laki-Laki</span>
+													</label>
+													<label class="selectgroup-item">
+														<input type="radio" name="value" value="100" class="selectgroup-input">
+														<span class="selectgroup-button">Perempuan</span>
+													</label>
+												</div>
+											</div>
+											<div class="form-group">
+												<label for="tgl2">Sejak Kapan</label>
+												<input type="date" class="form-control" id="tgl2">
+											</div>
+											<div class="form-group">
+												<label for="pendidikan">Pendidikan Terakhir</label>
+												<select class="form-control" id="pendidikan">
+													<option>TIDAK / BELUM SEKOLAH</option>
+													<option>TAMAT SD / SEDERAJAT</option>
+													<option>TIDAK TAMAT SD / SEDERAJAT</option>
+													<option>SLTA / SEDERAJAT</option>
+													<option>SLTP/SEDERAJAT</option>
+													<option>DIPLOMA I / II</option>
+													<option>AKADEMI/ DIPLOMA III/S. MUDA</option>
+													<option>DIPLOMA IV/ STRATA I</option>
+													<option>STRATA II</option>
+													<option>STRATA III</option>
+												</select>
+											</div>
+											<div class="form-group">
+												<label for="domisili">Alamat Domisili</label>
+												<input type="text" class="form-control" id="domisili">
+											</div>
+											<div class="form-group">
+												<label for="kerja2">Pekerjaan Ayah</label>
+												<input type="text" class="form-control" id="kerja2" placeholder="Pekerjaan Sesuai KK">
+											</div>
+											<div class="form-group">
+												<label for="rp2">Penghasilan Orang Tua</label>
+												<div class="input-group">
+													<div class="input-group-prepend">
+														<span class="input-group-text">Rp.</span>
+													</div>
+													<input type="number" class="form-control" aria-label="banyak (dalam bentuk rupiah)">
+													<div class="input-group-append">
+														<span class="input-group-text">.00</span>
+													</div>
+												</div>
+											</div>
+											<div class="form-group">
+												<label for="rp3">Penghasilan Wali</label>
+												<div class="input-group">
+													<div class="input-group-prepend">
+														<span class="input-group-text">Rp.</span>
+													</div>
+													<input type="number" class="form-control" aria-label="banyak (dalam bentuk rupiah)">
+													<div class="input-group-append">
+														<span class="input-group-text">.00</span>
+													</div>
+												</div>
+											</div>
+											<div class="form-group">
+												<label for="no">No Hp</label>
+												<input type="number" class="form-control" id="no" placeholder="0812345678910">
 											</div>
 										</div>
 									</div>
