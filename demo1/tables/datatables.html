@@ -106,21 +106,21 @@
 			
 			<div class="sidebar-wrapper scrollbar scrollbar-inner">
 				<div class="sidebar-content">
-					<div class="user">
+					<div class="user" style="margin-bottom: 10px;padding-bottom: 20px;">
 						<div class="avatar-sm float-left mr-2">
-							<img src="../../assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle">
+							<img src="../assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle">
 						</div>
 						<div class="info">
-							<a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
+							<a data-toggle="collapse" href="#collapseExample" aria-expanded="false" class="collapsed">
 								<span>
 									Hizrian
-									<span class="user-level">Administrator</span>
+									<span class="user-level"></span>
 									<span class="caret"></span>
 								</span>
 							</a>
 							<div class="clearfix"></div>
 
-							<div class="collapse in" id="collapseExample">
+							<div class="in collapse" id="collapseExample" style="">
 								<ul class="nav">
 									<li>
 										<a href="#profile">
@@ -394,110 +394,24 @@
 											</div>
 										</div>
 									</div>
-
-									<div class="table-responsive">
-										<table id="add-row" class="display table table-striped table-hover" >
-											<thead>
-												<tr>
-													<th>Nama</th>
-													<th>Tempat Lahir</th>
-													<th>Tanggal Lahir</th>
-													<th>Umur</th>
-													<th>NIK</th>
-													<th>Jenis Kelamin</th>
-													<th>Jenis Disabilitas</th>
-													<th>Gambar Disabilitas</th>
-													<th>Sejak Kapan</th>
-													<th>Penyebab Disabilitas</th>
-													<th>Agama</th>
-													<th>Pendidikan Terakhir</th>
-													<th>Status Kawin</th>
-													<th>Alamat</th>
-													<th>Alamat Domisili</th>
-													<th>Program Bantuan Pemerintah</th>
-													<th>Pekerjaan Disabilitas</th>
-													<th>Pekerjaan Ayah</th>
-													<th>Pekerjaan Ibu</th>
-													<th>Penghasilan Disabilitas</th>
-													<th>Penghasilan Orang Tua</th>
-													<th>Nama Wali</th>
-													<th>Pekerjaan Wali</th>
-													<th>Penghasilan Wali</th>
-													<th>Bantuan yg Dibutuhkan</th>
-													<th>PPKS Tinggal Bersama</th>
-													<th>No Hp</th>
-												</tr>
-											</thead>
-											<tfoot>
-												<tr>
-													<th>Nama</th>
-													<th>Tempat Lahir</th>
-													<th>Tanggal Lahir</th>
-													<th>Umur</th>
-													<th>NIK</th>
-													<th>Jenis Kelamin</th>
-													<th>Jenis Disabilitas</th>
-													<th>Gambar Disabilitas</th>
-													<th>Sejak Kapan</th>
-													<th>Penyebab Disabilitas</th>
-													<th>Agama</th>
-													<th>Pendidikan Terakhir</th>
-													<th>Status Kawin</th>
-													<th>Alamat</th>
-													<th>Alamat Domisili</th>
-													<th>Program Bantuan Pemerintah</th>
-													<th>Pekerjaan Disabilitas</th>
-													<th>Pekerjaan Ayah</th>
-													<th>Pekerjaan Ibu</th>
-													<th>Penghasilan Disabilitas</th>
-													<th>Penghasilan Orang Tua</th>
-													<th>Nama Wali</th>
-													<th>Pekerjaan Wali</th>
-													<th>Penghasilan Wali</th>
-													<th>Bantuan yg Dibutuhkan</th>
-													<th>PPKS Tinggal Bersama</th>
-													<th>No Hp</th>
-												</tr>											
-											</tfoot>
-											<!--isi dari data-->
-											<tbody>
-												tr
-											</tbody>
-											<!--end isi data-->
-										</table>
-									</div>
+									<div class="table-responsive"><div id="add-row_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4"><div class="row"><div class="col-sm-12 col-md-6"><div class="dataTables_length" id="add-row_length"><label>Show <select name="add-row_length" aria-controls="add-row" class="form-control form-control-sm"><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> entries</label></div></div><div class="col-sm-12 col-md-6"><div id="add-row_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="add-row"></label></div></div></div><div class="row"><div class="col-sm-12"><table id="add-row" class="display table table-striped table-hover dataTable" role="grid" aria-describedby="add-row_info">
+										<thead>
+											<tr role="row"><th class="sorting_asc" tabindex="0" aria-controls="add-row" rowspan="1" colspan="1" style="width: 37.0312px;" aria-sort="ascending" aria-label="Nama: activate to sort column descending">Nama</th><th class="sorting" tabindex="0" aria-controls="add-row" rowspan="1" colspan="1" style="width: 46.8438px;" aria-label="Tempat Lahir: activate to sort column ascending">Tempat Lahir</th><th class="sorting" tabindex="0" aria-controls="add-row" rowspan="1" colspan="1" style="width: 47.5312px;" aria-label="Tanggal Lahir: activate to sort column ascending">Tanggal Lahir</th><th class="sorting" tabindex="0" aria-controls="add-row" rowspan="1" colspan="1" style="width: 35.6719px;" aria-label="Umur: activate to sort column ascending">Umur</th><th class="sorting" tabindex="0" aria-controls="add-row" rowspan="1" colspan="1" style="width: 24.7656px;" aria-label="NIK: activate to sort column ascending">NIK</th><th class="sorting" tabindex="0" aria-controls="add-row" rowspan="1" colspan="1" style="width: 51.625px;" aria-label="Jenis Kelamin: activate to sort column ascending">Jenis Kelamin</th><th class="sorting" tabindex="0" aria-controls="add-row" rowspan="1" colspan="1" style="width: 65.9375px;" aria-label="Jenis Disabilitas: activate to sort column ascending">Jenis Disabilitas</th><th class="sorting" tabindex="0" aria-controls="add-row" rowspan="1" colspan="1" style="width: 65.9375px;" aria-label="Gambar Disabilitas: activate to sort column ascending">Gambar Disabilitas</th><th class="sorting" tabindex="0" aria-controls="add-row" rowspan="1" colspan="1" style="width: 40.3125px;" aria-label="Sejak Kapan: activate to sort column ascending">Sejak Kapan</th><th class="sorting" tabindex="0" aria-controls="add-row" rowspan="1" colspan="1" style="width: 65.9375px;" aria-label="Penyebab Disabilitas: activate to sort column ascending">Penyebab Disabilitas</th><th class="sorting" tabindex="0" aria-controls="add-row" rowspan="1" colspan="1" style="width: 43.6406px;" aria-label="Agama: activate to sort column ascending">Agama</th><th class="sorting" tabindex="0" aria-controls="add-row" rowspan="1" colspan="1" style="width: 70.5469px;" aria-label="Pendidikan Terakhir: activate to sort column ascending">Pendidikan Terakhir</th><th class="sorting" tabindex="0" aria-controls="add-row" rowspan="1" colspan="1" style="width: 39.8125px;" aria-label="Status Kawin: activate to sort column ascending">Status Kawin</th><th class="sorting" tabindex="0" aria-controls="add-row" rowspan="1" colspan="1" style="width: 45.6094px;" aria-label="Alamat: activate to sort column ascending">Alamat</th><th class="sorting" tabindex="0" aria-controls="add-row" rowspan="1" colspan="1" style="width: 51.5156px;" aria-label="Alamat Domisili: activate to sort column ascending">Alamat Domisili</th><th class="sorting" tabindex="0" aria-controls="add-row" rowspan="1" colspan="1" style="width: 73.4844px;" aria-label="Program Bantuan Pemerintah: activate to sort column ascending">Program Bantuan Pemerintah</th><th class="sorting" tabindex="0" aria-controls="add-row" rowspan="1" colspan="1" style="width: 65.9375px;" aria-label="Pekerjaan Disabilitas: activate to sort column ascending">Pekerjaan Disabilitas</th><th class="sorting" tabindex="0" aria-controls="add-row" rowspan="1" colspan="1" style="width: 62.9219px;" aria-label="Pekerjaan Ayah: activate to sort column ascending">Pekerjaan Ayah</th><th class="sorting" tabindex="0" aria-controls="add-row" rowspan="1" colspan="1" style="width: 62.9219px;" aria-label="Pekerjaan Ibu: activate to sort column ascending">Pekerjaan Ibu</th><th class="sorting" tabindex="0" aria-controls="add-row" rowspan="1" colspan="1" style="width: 75.5156px;" aria-label="Penghasilan Disabilitas: activate to sort column ascending">Penghasilan Disabilitas</th><th class="sorting" tabindex="0" aria-controls="add-row" rowspan="1" colspan="1" style="width: 75.5156px;" aria-label="Penghasilan Orang Tua: activate to sort column ascending">Penghasilan Orang Tua</th><th class="sorting" tabindex="0" aria-controls="add-row" rowspan="1" colspan="1" style="width: 37.0312px;" aria-label="Nama Wali: activate to sort column ascending">Nama Wali</th><th class="sorting" tabindex="0" aria-controls="add-row" rowspan="1" colspan="1" style="width: 62.9219px;" aria-label="Pekerjaan Wali: activate to sort column ascending">Pekerjaan Wali</th><th class="sorting" tabindex="0" aria-controls="add-row" rowspan="1" colspan="1" style="width: 75.5156px;" aria-label="Penghasilan Wali: activate to sort column ascending">Penghasilan Wali</th><th class="sorting" tabindex="0" aria-controls="add-row" rowspan="1" colspan="1" style="width: 74.5469px;" aria-label="Bantuan yg Dibutuhkan: activate to sort column ascending">Bantuan yg Dibutuhkan</th><th class="sorting" tabindex="0" aria-controls="add-row" rowspan="1" colspan="1" style="width: 54.8906px;" aria-label="PPKS Tinggal Bersama: activate to sort column ascending">PPKS Tinggal Bersama</th><th class="sorting" tabindex="0" aria-controls="add-row" rowspan="1" colspan="1" style="width: 18.5469px;" aria-label="No Hp: activate to sort column ascending">No Hp</th></tr>
+										</thead>
+										<tfoot>
+											<tr><th rowspan="1" colspan="1">Nama</th><th rowspan="1" colspan="1">Tempat Lahir</th><th rowspan="1" colspan="1">Tanggal Lahir</th><th rowspan="1" colspan="1">Umur</th><th rowspan="1" colspan="1">NIK</th><th rowspan="1" colspan="1">Jenis Kelamin</th><th rowspan="1" colspan="1">Jenis Disabilitas</th><th rowspan="1" colspan="1">Gambar Disabilitas</th><th rowspan="1" colspan="1">Sejak Kapan</th><th rowspan="1" colspan="1">Penyebab Disabilitas</th><th rowspan="1" colspan="1">Agama</th><th rowspan="1" colspan="1">Pendidikan Terakhir</th><th rowspan="1" colspan="1">Status Kawin</th><th rowspan="1" colspan="1">Alamat</th><th rowspan="1" colspan="1">Alamat Domisili</th><th rowspan="1" colspan="1">Program Bantuan Pemerintah</th><th rowspan="1" colspan="1">Pekerjaan Disabilitas</th><th rowspan="1" colspan="1">Pekerjaan Ayah</th><th rowspan="1" colspan="1">Pekerjaan Ibu</th><th rowspan="1" colspan="1">Penghasilan Disabilitas</th><th rowspan="1" colspan="1">Penghasilan Orang Tua</th><th rowspan="1" colspan="1">Nama Wali</th><th rowspan="1" colspan="1">Pekerjaan Wali</th><th rowspan="1" colspan="1">Penghasilan Wali</th><th rowspan="1" colspan="1">Bantuan yg Dibutuhkan</th><th rowspan="1" colspan="1">PPKS Tinggal Bersama</th><th rowspan="1" colspan="1">No Hp</th></tr>											
+										</tfoot>
+										<!--isi dari data-->
+										<tbody><tr class="odd"><td valign="top" colspan="27" class="dataTables_empty">No data available in table</td></tr></tbody>
+										<!--end isi data-->
+									</table></div></div><div class="row"><div class="col-sm-12 col-md-5"><div class="dataTables_info" id="add-row_info" role="status" aria-live="polite">Showing 0 to 0 of 0 entries</div></div><div class="col-sm-12 col-md-7"><div class="dataTables_paginate paging_simple_numbers" id="add-row_paginate"><ul class="pagination"><li class="paginate_button page-item previous disabled" id="add-row_previous"><a href="#" aria-controls="add-row" data-dt-idx="0" tabindex="0" class="page-link">Previous</a></li><li class="paginate_button page-item next disabled" id="add-row_next"><a href="#" aria-controls="add-row" data-dt-idx="1" tabindex="0" class="page-link">Next</a></li></ul></div></div></div></div>
+								</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-			<footer class="footer">
-				<div class="container-fluid">
-					<nav class="pull-left">
-						<ul class="nav">
-							<li class="nav-item">
-								<a class="nav-link" href="https://www.themekita.com">
-									ThemeKita
-								</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="#">
-									Help
-								</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="#">
-									Licenses
-								</a>
-							</li>
-						</ul>
-					</nav>
-					<div class="copyright ml-auto">
-						2018, made with <i class="fa fa-heart heart text-danger"></i> by <a href="https://www.themekita.com">ThemeKita</a>
-					</div>				
-				</div>
-			</footer>
 		</div>
 		<!-- End Custom template -->
 	</div>
