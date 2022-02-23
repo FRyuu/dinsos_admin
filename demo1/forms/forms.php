@@ -1,3 +1,110 @@
+<?php
+    include ("../koneksi.php");
+    if (isset($_POST['submit'])) {
+		$nama =  $_POST['nama']; 
+		$tempat_lahir =  $_POST['tempat_lahir'];
+		$tanggal_lahir =  $_POST['tanggal_lahir'];
+		$umur =  $_POST['umur'];
+		$nik =  $_POST['nik'];
+		$jenis_kelamin =  $_POST['jenis_kelamin'];
+        $jenis_disabilitas =  $_POST['jenis_disabilitas'];
+		$gambaran_disabilitas =  $_POST['gambaran_disabilitas'];
+		$sejak_kapan =  $_POST['sejak_kapan'];
+		$penyebab_disabilitas =  $_POST['penyebab_disabilitas'];
+        $agama =  $_POST['agama'];
+        $pendidikan =  $_POST['pendidikan'];
+        $status_kawin =  $_POST['status_kawin'];
+        $alamat =  $_POST['alamat'];
+		$alamat_domisili =  $_POST['alamat_domisili'];
+        $program_pemerintah =  $_POST['program_pemerintah'];
+        $pekerjaan_disabilitas =  $_POST['pekerjaan_disabilitas'];
+        $pekerjaan_ayah =  $_POST['pekerjaan_ayah'];
+        $pekerjaan_ibu =  $_POST['pekerjaan_ibu'];
+        $penghasilan_disabilitas =  $_POST['penghasilan_disabilitas'];
+        $penghasilan_orangtua =  $_POST['penghasilan_orangtua'];
+        $nama_wali =  $_POST['nama_wali'];
+        $pekerjaan_wali =  $_POST['pekerjaan_wali'];
+		$penghasilan_wali =  $_POST['penghasilan_wali'];
+        $bantuan_ygdibutuhkan =  $_POST['bantuan_ygdibutuhkan'];
+        $ppks_tinggal_bersama =  $_POST['ppks_tinggal_bersama']; 
+		$no_hp =  $_POST['no_hp'];
+
+        $result = mysqli_query($connect, "INSERT INTO data_disabilitas(
+                    nama,
+                    tempat_lahir,
+					tanggal_lahir,
+					umur,
+                    nik,
+                    jenis_kelamin,
+                    jenis_disabilitas,
+                    gambaran_disabilitas,
+                    sejak_kapan,
+                    penyebab_disabilitas,
+                    agama,
+                    pendidikan,
+                    status_kawin,
+                    alamat,
+					alamat_domisili,
+                    program_pemerintah,
+                    pekerjaan_disabilitas,
+                    pekerjaan_ayah,
+                    pekerjaan_ibu,
+                    penghasilan_disabilitas,
+                    penghasilan_orangtua,
+                    nama_wali,
+                    pekerjaan_wali,
+					penghasilan_wali,
+                    bantuan_ygdibutuhkan,
+                    ppks_tinggal_bersama,
+					no_hp)
+                    VALUES(
+                    '$nama',
+                    '$tempat_lahir',
+					'$tanggal_lahir',
+					'$umur',
+                    '$nik',
+                    '$jenis_kelamin',
+                    '$jenis_disabilitas',
+                    '$gambaran_disabilitas',
+                    '$sejak_kapan',
+                    '$penyebab_disabilitas',
+                    '$agama',
+                    '$pendidikan',
+                    '$status_kawin',
+                    '$alamat',
+					'$alamat_domisili',
+                    '$program_pemerintah',
+                    '$pekerjaan_disabilitas',
+                    '$pekerjaan_ayah',
+                    '$pekerjaan_ibu',
+                    '$penghasilan_disabilitas',
+                    '$penghasilan_orangtua',
+                    '$nama_wali',
+                    '$pekerjaan_wali',
+					'$penghasilan_wali',
+                    '$bantuan_ygdibutuhkan',
+                    '$ppks_tinggal_bersama'
+					'$no_hp')
+                    "
+        );
+    if ($result) {
+    $log = mysqli_query($connect, "insert into log(log) values('Admin menambahkan data disabilitas dengan nik".$nik." dari nama ".$nama."')");
+    echo "<script>
+    window.alert('Data Berhasil Disimpan');
+    window.location = '../demo1/tables/datatables.php';
+    </script>";
+    }   
+    else {
+    echo '<script>
+    window.alert("gagal");
+    </script>';
+    } 
+
+}   
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -63,21 +170,25 @@
 						</form>
 					</div>
 					<ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
-						
+						<li class="nav-item toggle-nav-search hidden-caret">
+							<a class="nav-link" data-toggle="collapse" href="#search-nav" role="button" aria-expanded="false" aria-controls="search-nav">
+								<i class="fa fa-search"></i>
+							</a>
+						</li>
 						
 						
 						
 						<li class="nav-item dropdown hidden-caret">
 							<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false">
 								<div class="avatar-sm">
-									<img src="../../assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle">
+									<img src="../assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle">
 								</div>
 							</a>
 							<ul class="dropdown-menu dropdown-user animated fadeIn">
-								<div class="scroll-wrapper dropdown-user-scroll scrollbar-outer" style="position: relative;"><div class="scroll-wrapper dropdown-user-scroll scrollbar-outer scroll-content" style="position: relative;"><div class="dropdown-user-scroll scrollbar-outer scroll-content" style="height: auto; margin-bottom: 0px; margin-right: 0px; max-height: 0px;">
+								<div class="scroll-wrapper dropdown-user-scroll scrollbar-outer" style="position: relative;"><div class="scroll-wrapper dropdown-user-scroll scrollbar-outer scroll-content" style="position: relative;"><div class="scroll-wrapper dropdown-user-scroll scrollbar-outer scroll-content" style="position: relative;"><div class="dropdown-user-scroll scrollbar-outer scroll-content" style="height: auto; margin-bottom: 0px; margin-right: 0px; max-height: 0px;">
 									<li>
 										<div class="user-box">
-											<div class="avatar-lg"><img src="../../assets/img/profile.jpg" alt="image profile" class="avatar-img rounded"></div>
+											<div class="avatar-lg"><img src="../assets/img/profile.jpg" alt="image profile" class="avatar-img rounded"></div>
 											<div class="u-text">
 												<h4>Hizrian</h4>
 												<p class="text-muted">hello@example.com</p><a href="profile.html" class="btn btn-xs btn-secondary btn-sm">View Profile</a>
@@ -94,7 +205,7 @@
 										<div class="dropdown-divider"></div>
 										<a class="dropdown-item" href="#">Logout</a>
 									</li>
-								</div><div class="scroll-element scroll-x"><div class="scroll-element_outer"><div class="scroll-element_size"></div><div class="scroll-element_track"></div><div class="scroll-bar ui-draggable ui-draggable-handle"></div></div></div><div class="scroll-element scroll-y"><div class="scroll-element_outer"><div class="scroll-element_size"></div><div class="scroll-element_track"></div><div class="scroll-bar ui-draggable ui-draggable-handle"></div></div></div></div><div class="scroll-element scroll-x"><div class="scroll-element_outer"><div class="scroll-element_size"></div><div class="scroll-element_track"></div><div class="scroll-bar ui-draggable ui-draggable-handle"></div></div></div><div class="scroll-element scroll-y"><div class="scroll-element_outer"><div class="scroll-element_size"></div><div class="scroll-element_track"></div><div class="scroll-bar ui-draggable ui-draggable-handle"></div></div></div></div>
+								</div><div class="scroll-element scroll-x"><div class="scroll-element_outer"><div class="scroll-element_size"></div><div class="scroll-element_track"></div><div class="scroll-bar ui-draggable ui-draggable-handle"></div></div></div><div class="scroll-element scroll-y"><div class="scroll-element_outer"><div class="scroll-element_size"></div><div class="scroll-element_track"></div><div class="scroll-bar ui-draggable ui-draggable-handle"></div></div></div></div><div class="scroll-element scroll-x"><div class="scroll-element_outer"><div class="scroll-element_size"></div><div class="scroll-element_track"></div><div class="scroll-bar ui-draggable ui-draggable-handle"></div></div></div><div class="scroll-element scroll-y"><div class="scroll-element_outer"><div class="scroll-element_size"></div><div class="scroll-element_track"></div><div class="scroll-bar ui-draggable ui-draggable-handle"></div></div></div></div><div class="scroll-element scroll-x"><div class="scroll-element_outer"><div class="scroll-element_size"></div><div class="scroll-element_track"></div><div class="scroll-bar ui-draggable ui-draggable-handle"></div></div></div><div class="scroll-element scroll-y"><div class="scroll-element_outer"><div class="scroll-element_size"></div><div class="scroll-element_track"></div><div class="scroll-bar ui-draggable ui-draggable-handle"></div></div></div></div>
 							</ul>
 						</li>
 					</ul>
@@ -152,13 +263,13 @@
 							</a>
 						</li>
 						<li class="nav-item active submenu">
-							<a href="../forms/forms.html">
+							<a href="../forms/forms.php">
 								<i class="fas fa-pen-square"></i>
 								<p>Forms</p>
 							</a>
 						</li>
 						<li class="nav-item">
-							<a href="../tables/datatables.html">
+							<a href="../tables/datatables.php">
 								<i class="fas fa-table"></i>
 								<p>Tables</p>
 							</a>
@@ -203,20 +314,20 @@
 										<div class="col-xl-4">
 											<div class="form-group">
 												<label for="nama">Nama</label>
-												<input type="text" class="form-control" id="nama" placeholder="Masukkan Nama Lengkap">
+												<input type="text" class="form-control" id="nama" placeholder="Masukkan Nama Lengkap" name="nama">
 											</div>
 											<div class="form-group" style="width: 200px;">
 												<label for="umur">Umur</label>
 												<div class="input-group mb-3">
-													<input type="number" class="form-control" placeholder="1" aria-label="1" aria-describedby="ad1">
+													<input type="number" class="form-control" placeholder="1" aria-label="1" aria-describedby="umur" name="umur">
 													<div class="input-group-append">
-														<span class="input-group-text" id="ad1">Tahun</span>
+														<span class="input-group-text" id="umur">Tahun</span>
 													</div>
 												</div>
 											</div>
 											<div class="form-group">
-												<label for="jd">Jenis Disabilitas</label>
-												<select class="form-control" id="jd">
+												<label for="jenis_disabilitas">Jenis Disabilitas</label>
+												<select class="form-control" id="jenis_disabilitas" name="jenis_disabilitas">
 													<option>-</option>
 													<option>PDFSK (Penyandang Disabilitas Fisik) </option>
 													<option>PDINT (Penyandang Disabilitas Intelektual)< /option>
@@ -225,46 +336,48 @@
 												</select>
 											</div>
 											<div class="form-group">
-												<label for="penyebab">Penyebab Disabilitas</label>
-												<input type="text" class="form-control" id="penyebab">
+												<label for="penyebab_disabilitas">Penyebab Disabilitas</label>
+												<input type="text" class="form-control" id="penyebab_disabilitas" name="penyebab_disabilitas">
 											</div>	
 											<div class="form-group">
-												<label for="status">Status Kawin</label>
-												<select class="form-control" id="status">
+												<label for="status_kawin">Status Kawin</label>
+												<select class="form-control" id="status_kawin" name="status_kawin">
 													<option>Belum Kawin</option>
 													<option>Kawin</option>
 												</select>
 											</div>
 											<div class="form-group">
-												<label for="program">Program Bantuan Pemerintah</label>
-												<input type="text" class="form-control" id="program">
+												<label for="program_pemerintah">Program Bantuan Pemerintah</label>
+												<input type="text" class="form-control" id="program_pemerintah" name="program_pemerintah">
 											</div>
 											<div class="form-group">
-												<label for="kerja3">Pekerjaan Ibu</label>
-												<input type="text" class="form-control" id="kerja3" placeholder="Pekerjaan Sesuai KK">
+												<label for="pekerjaan_ibu">Pekerjaan Ibu</label>
+												<input type="text" class="form-control" id="pekerjaan_ibu" placeholder="Pekerjaan Sesuai KK" name="pekerjaan_ibu">
 											</div>
 											<div class="form-group">
-												<label for="wali">Nama Wali</label>
-												<input type="text" class="form-control" id="wali" placeholder="Jika Ada">
+												<label for="nama_wali">Nama Wali</label>
+												<input type="text" class="form-control" id="nama_wali" placeholder="Jika Ada"  name="nama_wali">
 											</div>
 											<div class="form-group">
-												<label for="bantuan">Bantuan yg Dibutuhkan</label>
-												<input type="text" class="form-control" id="bantuan">
+												<label for="bantuan_ygdibutuhkan">Bantuan yg Dibutuhkan</label>
+												<input type="text" class="form-control" id="bantuan_ygdibutuhkan" name="bantuan_ygdibutuhkan">
 											</div>								
 										</div>
 										<div class="col-xl-4">
 											<div class="form-group">
-												<label for="tpl">Tempat Lahir</label>
-												<input type="text" class="form-control" id="tpl" placeholder="Tempat Lahir Sesuai KK">
+												
+											
+										<label for="tempat_lahir">Tempat Lahir</label>
+												<input type="text" class="form-control" id="tempat_lahir" placeholder="Tempat Lahir Sesuai KK" name="tempat_lahir">
 											</div>
 											<div class="form-group">
 												<label for="nik">NIK</label>
-												<input type="number" class="form-control" id="nik" placeholder="No NIK Sesuai KK">
+												<input type="number" class="form-control" id="nik" placeholder="No NIK Sesuai KK" name="nik"> 
 											</div>
 											<div class="form-group" style="padding-top: 17px;padding-bottom: 12px;">
-												<label for="img">Gambar Disabilitas</label>
+												<label for="gambaran_disabilitas">Gambaran Disabilitas</label>
 												<div class="input-group col-xs-12">
-													<input type="text" class="form-control file-upload-info" disabled="" placeholder="Upload Foto">
+												<input type="text" class="form-control" placeholder="contoh: cacat kaki" id="gambaran_disabilitas" name="gambaran_disabilitas">
 													<span class="input-group-append">
 														<button class="file-upload-browse btn btn-primary" type="button">Upload</button>
 													</span>
@@ -283,58 +396,58 @@
 											</div>
 											<div class="form-group">
 												<label for="alamat">Alamat</label>
-												<input type="text" class="form-control" id="alamat" placeholder="Alamat Sesuai KK">
+												<input type="text" class="form-control" id="alamat" placeholder="Alamat Sesuai KK" name="alamat">
 											</div>
 											<div class="form-group">
-												<label for="kerja">Pekerjaan Disabilitas</label>
-												<input type="text" class="form-control" id="kerja" placeholder="Pekerjaan Sesuai KK">
+												<label for="pekerjaan_disabilitas">Pekerjaan Disabilitas</label>
+												<input type="text" class="form-control" id="pekerjaan_disabilitas" placeholder="Pekerjaan Sesuai KK" name="pekerjaan_disabilitas">
 											</div>
 											<div class="form-group">
-												<label for="rp">Penghasilan Disabilitas</label>
+												<label for="penghasilan_disabilitas">Penghasilan Disabilitas</label>
 												<div class="input-group">
 													<div class="input-group-prepend">
 														<span class="input-group-text">Rp.</span>
 													</div>
-													<input type="number" class="form-control" aria-label="banyak (dalam bentuk rupiah)" id="rp">
+													<input type="number" class="form-control" aria-label="banyak (dalam bentuk rupiah)" id="penghasilan_disabilitas" name="penghasilan_disabilitas">
 													<div class="input-group-append">
 														<span class="input-group-text">.00</span>
 													</div>
 												</div>
 											</div>
 											<div class="form-group">
-												<label for="kerja4">Pekerjaan Wali</label>
-												<input type="text" class="form-control" id="kerja4" placeholder="Pekerjaan Wali Jika ada">
+												<label for="pekerjaan_wali">Pekerjaan Wali</label>
+												<input type="text" class="form-control" id="pekerjaan_wali" placeholder="Pekerjaan Wali Jika ada" name="pekerjaan_wali">
 											</div>
 											<div class="form-group">
-												<label for="ppks">PPKS Tinggal Bersama</label>
-												<input type="text" class="form-control" id="ppks">
+												<label for="ppks_tinggal_bersama">PPKS Tinggal Bersama</label>
+												<input type="text" class="form-control" id="ppks_tinggal_bersama" name="ppks_tinggal_bersama">
 											</div>
 										</div>
 										<div class="col-xl-4">
 											<div class="form-group">
-												<label for="tgl">Tanggal Lahir</label>
-												<input type="date" class="form-control" id="tgl">
+												<label for="tanggal_lahir">Tanggal Lahir</label>
+												<input type="date" class="form-control" id="tanggal_lahir" name="tanggal_lahir">
 											</div>
 											<div class="form-group">
 												<label class="form-label">Jenis Kelamin</label>
 												<div class="selectgroup w-100">
-													<label class="selectgroup-item" id="jk">
+													<label class="selectgroup-item" id="jenis_kelamin"  name="jenis_kelamin">
 														<input type="radio" name="value" value="50" class="selectgroup-input" checked="">
 														<span class="selectgroup-button">Laki-Laki</span>
 													</label>
-													<label class="selectgroup-item">
+													<label class="selectgroup-item" id="jenis_kelamin"  name="jenis_kelamin">
 														<input type="radio" name="value" value="100" class="selectgroup-input">
 														<span class="selectgroup-button">Perempuan</span>
 													</label>
 												</div>
 											</div>
 											<div class="form-group">
-												<label for="tgl2">Sejak Kapan</label>
-												<input type="date" class="form-control" id="tgl2">
+												<label for="sejak_kapan">Sejak Kapan</label>
+												<input type="date" class="form-control" id="sejak_kapan" name="sejak_kapan">
 											</div>
 											<div class="form-group">
 												<label for="pendidikan">Pendidikan Terakhir</label>
-												<select class="form-control" id="pendidikan">
+												<select class="form-control" id="pendidikan" name="pendidikan">
 													<option>TIDAK / BELUM SEKOLAH</option>
 													<option>TAMAT SD / SEDERAJAT</option>
 													<option>TIDAK TAMAT SD / SEDERAJAT</option>
@@ -348,46 +461,46 @@
 												</select>
 											</div>
 											<div class="form-group">
-												<label for="domisili">Alamat Domisili</label>
-												<input type="text" class="form-control" id="domisili">
+												<label for="alamat_domisili">Alamat Domisili</label>
+												<input type="text" class="form-control" id="alamat_domisili" name="alamat_domisili">
 											</div>
 											<div class="form-group">
-												<label for="kerja2">Pekerjaan Ayah</label>
-												<input type="text" class="form-control" id="kerja2" placeholder="Pekerjaan Sesuai KK">
+												<label for="pekerjaan_ayah">Pekerjaan Ayah</label>
+												<input type="text" class="form-control" id="pekerjaan_ayah" placeholder="Pekerjaan Sesuai KK" name="pekerjaan_ayah">
 											</div>
 											<div class="form-group">
-												<label for="rp2">Penghasilan Orang Tua</label>
+												<label for="penghasilan_orangtua">Penghasilan Orang Tua</label>
 												<div class="input-group">
 													<div class="input-group-prepend">
 														<span class="input-group-text">Rp.</span>
 													</div>
-													<input type="number" class="form-control" aria-label="banyak (dalam bentuk rupiah" id="rt2">
+													<input type="number" class="form-control" aria-label="banyak (dalam bentuk rupiah" id="penghasilan_orangtua" name="penghasilan_orangtua">
 													<div class="input-group-append">
 														<span class="input-group-text">.00</span>
 													</div>
 												</div>
 											</div>
 											<div class="form-group">
-												<label for="rp3">Penghasilan Wali</label>
+												<label for="penghasilan_wali">Penghasilan Wali</label>
 												<div class="input-group">
 													<div class="input-group-prepend">
 														<span class="input-group-text">Rp.</span>
 													</div>
-													<input type="number" class="form-control" aria-label="banyak (dalam bentuk rupiah)" id="rp3F">
+													<input type="number" class="form-control" aria-label="banyak (dalam bentuk rupiah)" id="penghasilan_wali" name="penghasilan_wali">
 													<div class="input-group-append">
 														<span class="input-group-text">.00</span>
 													</div>
 												</div>
 											</div>
 											<div class="form-group">
-												<label for="no">No Hp</label>
-												<input type="number" class="form-control" id="no" placeholder="0812345678910">
+												<label for="no_hp">No Hp</label>
+												<input type="number" class="form-control" id="no_hp" placeholder="0812345678910" name="no_hp">
 											</div>
 										</div>
 									</div>
 								</div>
 								<div class="card-action">
-									<button class="btn btn-success">Submit</button>
+									<button type="submit" name="submit" class="btn btn-primary mr-2">Submit</button>
 									<button class="btn btn-danger">Cancel</button>
 								</div>
 							</div>
