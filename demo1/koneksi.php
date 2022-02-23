@@ -2,7 +2,7 @@
 $host = "localhost";
 $user = "root";
 $pass = "";
-$db = "dinsos";
+$db = "data_disabilitas";
 
 $connect = mysqli_connect($host, $user, $pass, $db);
 
