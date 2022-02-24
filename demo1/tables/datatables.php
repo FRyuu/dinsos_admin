@@ -104,7 +104,12 @@
     } 
 
 }   
+
+
+
 ?> 
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -650,43 +655,65 @@
 															<div class="col-md-6">
 																<div class="form-group form-group-defaut">
 																	<label>Pekerjaan Wali</label>
+<<<<<<< HEAD
 																	<input type="text" class="form-control" id="pekerjaan_wali" placeholder="Pekerjaan Wali Jika ada" name="pekerjaan_wali">
+=======
+																	<input type="text" class="form-control" id="pekerjaan_wali" placeholder="Pekerjaan Wali Jika ada">
 																</div>
-															</div>
-															<div class="col-md-6">
-																<div class="form-group form-group-defaut">
 																	<label>Penghasilan Wali</label>
+<<<<<<< HEAD
 																	<input type="number" class="form-control" aria-label="banyak (dalam bentuk rupiah)" id="penghasilan_wali" name="penghasilan_wali">
+=======
+																	<input type="number" class="form-control" aria-label="banyak (dalam bentuk rupiah)" id="penghasilan_wali">
+>>>>>>> master
 																</div>
 															</div>
 															<div class="col-md-6">
 																<div class="form-group form-group-defaut">
 																	<label>Bantuan yg Dibutuhkan</label>
+<<<<<<< HEAD
 																	<input type="text" class="form-control" id="bantuan_ygdibutuhkan" name="bantuan_ygdibutuhkan">
+=======
+																	<input type="text" class="form-control" id="bantuan_ygdibutuhkan">
+>>>>>>> master
 																</div>
 															</div>
 															<div class="col-md-6">
 																<div class="form-group form-group-defaut">
 																	<label>PPKS Tinggal Bersama</label>
+<<<<<<< HEAD
 																	<input type="text" class="form-control" id="ppks_tinggal_bersama" name="ppks_tinggal_bersama">
+=======
+																	<input type="text" class="form-control" id="ppks_tinggal_bersama">
+>>>>>>> master
 																</div>
 															</div>
 															<div class="col-md-6">
 																<div class="form-group form-group-defaut">
 																	<label>No Hp</label>
+<<<<<<< HEAD
 																	<input type="number" class="form-control" id="no_hp" placeholder="0812345678910" name="no_hp">
+=======
+																	<input type="number" class="form-control" id="no_hp" placeholder="0812345678910">
+>>>>>>> master
 																</div>
 															</div>															
 														</div>
 													</form>
 												</div>
 												<div class="modal-footer no-bd">
+<<<<<<< HEAD
 													<button type="button" id="tambah" class="btn btn-primary" name="tambah">Tambah</button>
 													<button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+=======
+													<button type="button" id="addRowButton" class="btn btn-primary">Add</button>
+													<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+>>>>>>> master
 												</div>
 											</div>
 										</div>
 									</div>
+<<<<<<< HEAD
 									<div class="table-responsive">
 										<div id="add-row_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4">
 											<div class="row">
@@ -734,9 +761,48 @@
 												<th class="sorting" tabindex="0" aria-controls="add-row" rowspan="1" colspan="1" style="width: 18.5469px;" aria-label="Aksi">Aksi</th>
 											</tr>
 											
+																				
 										</tfoot>
 										<!--isi dari data-->
 										<tbody><tr class="odd">
+=======
+
+									<div class="table-responsive">
+										<table id="add-row" class="display table table-striiped table-hover" >
+										<thead>
+											<tr role="row"><th rowspan="1" colspan="1">Nama</th><th rowspan="1" colspan="1">Tempat Lahir</th><th rowspan="1" colspan="1">Tanggal Lahir</th><th rowspan="1" colspan="1">Umur</th><th rowspan="1" colspan="1">NIK</th><th rowspan="1" colspan="1">Jenis Kelamin</th><th rowspan="1" colspan="1">Jenis Disabilitas</th><th rowspan="1" colspan="1">Gambaran Disabilitas</th><th rowspan="1" colspan="1">Sejak Kapan</th><th rowspan="1" colspan="1">Penyebab Disabilitas</th><th rowspan="1" colspan="1">Agama</th><th rowspan="1" colspan="1">Pendidikan Terakhir</th><th rowspan="1" colspan="1">Status Kawin</th><th rowspan="1" colspan="1">Alamat</th><th rowspan="1" colspan="1">Alamat Domisili</th><th rowspan="1" colspan="1">Program Bantuan Pemerintah</th><th rowspan="1" colspan="1">Pekerjaan Disabilitas</th><th rowspan="1" colspan="1">Pekerjaan Ayah</th><th rowspan="1" colspan="1">Pekerjaan Ibu</th><th rowspan="1" colspan="1">Penghasilan Disabilitas</th><th rowspan="1" colspan="1">Penghasilan Orang Tua</th><th rowspan="1" colspan="1">Nama Wali</th><th rowspan="1" colspan="1">Pekerjaan Wali</th><th rowspan="1" colspan="1">Penghasilan Wali</th><th rowspan="1" colspan="1">Bantuan yg Dibutuhkan</th><th rowspan="1" colspan="1">PPKS Tinggal Bersama</th><th rowspan="1" colspan="1">No Hp</th><th rowspan="1" colspan="1" style="padding: 0 3rem !important;">Aksi </th></tr>
+                                                </thead>
+												<tr>
+													<th>Nama</th>
+													<th>Tempat Lahir</th>
+													<th>Tanggal Lahir</th>
+													<th>Umur</th>
+													<th>NIK</th>
+													<th>Jenis Kelamin</th>
+													<th>Jenis Disabilitas</th>
+													<th>Gambaran Disabilitas</th>
+													<th>Sejak Kapan</th>
+													<th>Penyebab Disabilitas</th>
+													<th>Agama</th>
+													<th>Pendidikan Terakhir</th>
+													<th>Status Kawin</th>
+													<th>Alamat</th>
+													<th>Alamat Domisili</th>
+													<th>Program Bantuan Pemerintah</th>
+													<th>Pekerjaan Disabilitas</th>
+													<th>Pekerjaan Ayah</th>
+													<th>Pekerjaan Ibu</th>
+													<th>Penghasilan Disabilitas</th>
+													<th>Penghasilan Orang Tua</th>
+													<th>Nama Wali</th>
+													<th>Pekerjaan Wali</th>
+													<th>Penghasilan Wali</th>
+													<th>Bantuan yg Dibutuhkan</th>
+													<th>PPKS Tinggal Bersama</th>
+													<th>No Hp</th>
+													<th>Aksi </th>
+												</tr>
+>>>>>>> master
 											<?php if (mysqli_num_rows($result) > 0) {
                                                 while($row = mysqli_fetch_assoc($result)) {
                                                 ?>
@@ -768,16 +834,28 @@
                                                     <td><?php echo $row['bantuan_ygdibutuhkan']; ?></td>
                                                     <td><?php echo $row['ppks_tinggal_bersama']; ?></td>
 													<td><?php echo $row['no_hp']; ?></td>
+<<<<<<< HEAD
 													<td style="text-align: center;">
 													<a class='btn btn-info btn-xs' href="edit_table.php?nik=<?php echo $row['nik'] ?>" class=""> <i class="mdi mdi-table-edit icon-sm"></i></a>
                                                 	<a class='btn btn-danger btn-xs' href="hapus_table.php?nik=<?php echo $row['nik'] ?>" class="mdi mdi-delete icon-sm" onclick="return confirm('Yakin ingin menghapus data?')";><i class="mdi mdi-delete icon-sm"></i></a>
                                             		</td>
 												</tr>
+=======
+												</tr>
+                                            <td style="text-align: center;">
+                                                
+												<a class='btn btn-info btn-xs' href="edit_table.php?nik=<?php echo $row['nik'] ?>" class=""> <i class="mdi mdi-table-edit icon-sm"></i></a>
+                                                <a class='btn btn-danger btn-xs' href="hapus_table.php?nik=<?php echo $row['nik'] ?>" class="mdi mdi-delete icon-sm" onclick="return confirm('Yakin ingin menghapus data?')";><i class="mdi mdi-delete icon-sm"></i>
+                                                </a>
+                                            </td>
+                                            </tr>
+>>>>>>> master
                                                 <?php
                                                 }
                                             } else {
                                                 echo "Maaf Database error, silahkan hubungi pihak Dinas Sosial";
                                             } ?>
+<<<<<<< HEAD
 										</thead>
 										<tfoot>
 											<tr>
@@ -837,13 +915,51 @@
 						</div>
 								</div>
 								</div>
+=======
+                                        </thead>
+											<!--isi dari data-->
+
+											<!--end isi data-->
+										</table>
+									</div>
+								</div>
+>>>>>>> master
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
+<<<<<<< HEAD
+=======
+			<footer class="footer">
+				<div class="container-fluid">
+					<nav class="pull-left">
+						<ul class="nav">
+							<li class="nav-item">
+								<a class="nav-link" href="https://www.themekita.com">
+									ThemeKita
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#">
+									Help
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#">
+									Licenses
+								</a>
+							</li>
+						</ul>
+					</nav>
+					<div class="copyright ml-auto">
+						2022, made with <i class="fa fa-heart heart text-danger"></i> by <a href="https://www.themekita.com">ThemeKita</a>
+					</div>				
+				</div>
+			</footer>
+>>>>>>> master
 		</div>
-		<!-- End Custom template ok-->
+		<!-- End Custom template -->
 	</div>
 	<!--   Core JS Files   -->
 	<script src="../../assets/js/core/jquery.3.2.1.min.js"></script>
