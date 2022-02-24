@@ -36,7 +36,7 @@ session_start();
         if ($result) {
           echo "<script>
           window.alert('berhasil mengedit data');
-          window.location = '../demo1/tables/datatables.php';
+          window.location = '../tables/datatables.php';
           </script>";
         
         }else{
