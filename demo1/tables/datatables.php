@@ -103,6 +103,10 @@ session_start();
     } 
 
 }   
+<<<<<<< HEAD
+=======
+
+>>>>>>> 83eb241b936f55d767ec384c9336d17d26efda33
 ?> 
 <?php
 
@@ -579,6 +583,10 @@ if( !isset($_SESSION['nama']) ){
                                             } ?>
 										</tbody>
 											<!--end isi data-->
+<<<<<<< HEAD
+=======
+
+>>>>>>> 83eb241b936f55d767ec384c9336d17d26efda33
 											<tfoot>
 											<tr>
 												<th rowspan="1" colspan="1">Nama</th>
@@ -615,6 +623,10 @@ if( !isset($_SESSION['nama']) ){
 										<a href="detail.php" style="color: #FFF;">DOWNLOAD DATA
 										</a></button>
 										</table>					
+<<<<<<< HEAD
+=======
+
+>>>>>>> 83eb241b936f55d767ec384c9336d17d26efda33
 									</div>
 								</div>
 							</div>

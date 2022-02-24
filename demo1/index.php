@@ -64,7 +64,9 @@ header('Location: login.php');
 				
 				<div class="container-fluid">
 					<div class="collapse" id="search-nav">
+
 						<form class="navbar-left navbar-form nav-search mr-md-3"></form>
+
 					</div>
 					<ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
 						<li class="nav-item toggle-nav-search hidden-caret">
