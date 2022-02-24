@@ -178,7 +178,7 @@ if( !isset($_SESSION['nama']) ){
 						<li class="nav-item dropdown hidden-caret">
 							<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false">
 								<div class="avatar-sm">
-									<img src="../../assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle">
+									<img src="../../assets/img/img.jpg" alt="..." class="avatar-img rounded-circle">
 								</div>
 							</a>
 							<ul class="dropdown-menu dropdown-user animated fadeIn">
@@ -186,7 +186,7 @@ if( !isset($_SESSION['nama']) ){
 									<li>
 										<div class="user-box">
 											<div class="avatar-lg">
-												<img src="../../assets/img/profile.jpg" alt="image profile" class="avatar-img rounded"></div>
+												<img src="../../assets/img/img.jpg" alt="image profile" class="avatar-img rounded"></div>
 											<div class="u-text">
 											<h4><?php echo $_SESSION['nama']; ?></h4>
 												<p>Hallo <?php echo $_SESSION['nama']; ?> !! Welcome</p></a>												
@@ -215,7 +215,7 @@ if( !isset($_SESSION['nama']) ){
     padding-bottom: 20px;
 ">
 						<div class="avatar-sm float-left mr-2">
-							<img src="../../assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle">
+							<img src="../../assets/img/img.jpg" alt="..." class="avatar-img rounded-circle">
 						</div>
 						<div class="info">
 							<a data-toggle="collapse" href="#collapseExample" aria-expanded="true">

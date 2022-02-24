@@ -79,14 +79,14 @@ if( !isset($_SESSION['nama']) ){
 						<li class="nav-item dropdown hidden-caret">
 							<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false">
 								<div class="avatar-sm">
-									<img src="../assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle">
+									<img src="../assets/img/img.jpg" alt="..." class="avatar-img rounded-circle">
 								</div>
 							</a>
 							<ul class="dropdown-menu dropdown-user animated fadeIn">
 								<div class="scroll-wrapper dropdown-user-scroll scrollbar-outer" style="position: relative;"><div class="scroll-wrapper dropdown-user-scroll scrollbar-outer scroll-content" style="position: relative;"><div class="dropdown-user-scroll scrollbar-outer scroll-content" style="height: auto; margin-bottom: 0px; margin-right: 0px; max-height: 0px;">
 									<li>
 										<div class="user-box">
-											<div class="avatar-lg"><img src="../assets/img/profile.jpg" alt="image profile" class="avatar-img rounded"></div>
+											<div class="avatar-lg"><img src="../assets/img/img.jpg" alt="image profile" class="avatar-img rounded"></div>
 											<div class="u-text">
 												<h4><?php echo $_SESSION['nama']; ?></h4>
 												<p>Hallo <?php echo $_SESSION['nama']; ?> !! Welcome</p></a>
@@ -110,7 +110,7 @@ if( !isset($_SESSION['nama']) ){
 				<div class="sidebar-content">
 					<div class="user" style="margin-bottom: 10px;padding-bottom: 20px;">
 						<div class="avatar-sm float-left mr-2">
-							<img src="../assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle">
+							<img src="../assets/img/img.jpg" alt="..." class="avatar-img rounded-circle">
 						</div>
 						<div class="info">
 							<a data-toggle="collapse" href="#collapseExample" aria-expanded="false" class="collapsed">
@@ -148,69 +148,18 @@ if( !isset($_SESSION['nama']) ){
 		</div>
 		<div class="main-panel">
 			<div class="content">
-				
-				<div class="page-inner">
-					<!-- Card -->
-					<h4 class="page-title">Dashboard</h4>
-					<div class="row">
-						<div class="col-xl-4 col-md-3">
-							<div class="card card-stats card-primary card-round">
-								<div class="card-body">
-									<div class="row">
-										<div class="col-5">
-											<div class="icon-big text-center">
-												<i class="flaticon-users"></i>
-											</div>
-										</div>
-										<div class="col-7col-stats">
-											<div class="numbers">
-												<p class="card-category">Data Disabilitas</p>
-												<h4 class="card-title">1,294</h4>
-											</div>
-										</div>
-									</div>
-								</div>
+				<div class="panel-header bg-primary-gradient">
+					<div class="page-inner py-5">
+						<div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
+							<div>
+								<h2 class="text-white pb-2 fw-bold">Selamat Datang Di Website Dinas Sosial Kota Tanjungpinang</h2>
 							</div>
 						</div>
-						<div class="col-xl-4 col-md-3">
-							<div class="card card-stats card-info card-round">
-								<div class="card-body">
-									<div class="row">
-										<div class="col-5">
-											<div class="icon-big text-center">
-												<i class="flaticon-interface-6"></i>
-											</div>
-										</div>
-										<div class="col-7 col-stats">
-											<div class="numbers">
-												<p class="card-category">Lengkap</p>
-												<h4 class="card-title">1303</h4>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
+					</div>					
+				</div>
+				<div class="page-inner py-5">
+				<div class="col-md-4">
 						</div>
-						<div class="col-xl-4 col-md-3">
-							<div class="card card-stats card-success card-round">
-								<div class="card-body ">
-									<div class="row">
-										<div class="col-5">
-											<div class="icon-big text-center">
-												<i class="flaticon-analytics"></i>
-											</div>
-										</div>
-										<div class="col-7 col-stats">
-											<div class="numbers">
-												<p class="card-category">Menerima Bantuan</p>
-												<h4 class="card-title">$ 1,345</h4>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>						
-					</div>
 				</div>
 			</div>
 		</div>
