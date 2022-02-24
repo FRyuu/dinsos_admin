@@ -1,19 +1,20 @@
 <?php
 //inisialisasi session
 session_start();
+ 
 //mengecek username pada session
 if( !isset($_SESSION['nama']) ){
 	
 	$_SESSION['msg'] = 'anda harus login untuk mengakses halaman ini';
-header('Location: login.php');
+  header('Location: login.php');
 }
-
+ 
 ?>
 
 <!DOCTYPE html>
 <html class="wf-flaticon-n4-inactive wf-lato-n3-active wf-lato-n4-active wf-lato-n7-active wf-lato-n9-active wf-fontawesome5solid-n4-active wf-fontawesome5regular-n4-active wf-fontawesome5brands-n4-active wf-simplelineicons-n4-active wf-active"><head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<title>Atlantis Lite Bootstrap Dashboard</title>
+	<title>Dinsos Web</title>
 	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no" name="viewport">
 	<link rel="icon" href="../assets/img/icon1.png" type="image/x-icon">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -64,9 +65,7 @@ header('Location: login.php');
 				
 				<div class="container-fluid">
 					<div class="collapse" id="search-nav">
-
 						<form class="navbar-left navbar-form nav-search mr-md-3"></form>
-
 					</div>
 					<ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
 						<li class="nav-item toggle-nav-search hidden-caret">
@@ -109,12 +108,12 @@ header('Location: login.php');
 		<div class="sidebar sidebar-style-2">			
 			<div class="scroll-wrapper sidebar-wrapper scrollbar scrollbar-inner" style="position: relative;"><div class="sidebar-wrapper scrollbar scrollbar-inner scroll-content" style="height: 634px; margin-bottom: 0px; margin-right: 0px; max-height: none;">
 				<div class="sidebar-content">
-					<div class="user">
+					<div class="user" style="margin-bottom: 10px;padding-bottom: 20px;">
 						<div class="avatar-sm float-left mr-2">
 							<img src="../assets/img/img.jpg" alt="..." class="avatar-img rounded-circle">
 						</div>
 						<div class="info">
-							<a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
+							<a data-toggle="collapse" href="#collapseExample" aria-expanded="false" class="collapsed">
 								<span>
 								<?php echo $_SESSION['nama']; ?>
 									<span class="user-level"></span>
@@ -140,8 +139,7 @@ header('Location: login.php');
 								<i class="fas fa-table"></i>
 								<p>Tables</p>
 							</a>
-						</li>
-						
+						</li>						
 						
 						
 					</ul>
@@ -163,36 +161,9 @@ header('Location: login.php');
 				<div class="col-md-4">
 						</div>
 				</div>
-				
 			</div>
-			<footer class="footer">
-				<div class="container-fluid">
-					<nav class="pull-left">
-						<ul class="nav">
-							<li class="nav-item">
-								<a class="nav-link" href="https://www.themekita.com">
-									ThemeKita
-								</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="#">
-									Help
-								</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="#">
-									Licenses
-								</a>
-							</li>
-						</ul>
-					</nav>
-					<div class="copyright ml-auto">
-						2018, made with <i class="fa fa-heart heart text-danger"></i> by <a href="https://www.themekita.com">ThemeKita</a>
-					</div>				
-				</div>
-			</footer>
 		</div>
-</div>
+	</div>
 
 
 <script src="../assets/js/core/jquery.3.2.1.min.js"></script>

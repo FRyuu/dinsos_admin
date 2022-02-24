@@ -103,7 +103,7 @@ session_start();
     } 
 
 }   
-?>
+?> 
 <?php
 
 if( !isset($_SESSION['nama']) ){
@@ -112,6 +112,8 @@ if( !isset($_SESSION['nama']) ){
   //header('Location: login.php');
 }
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -122,6 +124,7 @@ if( !isset($_SESSION['nama']) ){
 	<link rel="icon" href="../../assets/img/icon1.png" type="image/x-icon"/>
 	
 	<!-- Fonts and icons -->
+	<link rel="stylesheet" href="../../assets/vendors/mdi/css/materialdesignicons.min.css">
 	<script src="../../assets/js/plugin/webfont/webfont.min.js"></script>
 	<script>
 		WebFont.load({
@@ -132,16 +135,14 @@ if( !isset($_SESSION['nama']) ){
 			}
 		});
 	</script>
-
 	<!-- CSS Files -->
 	<link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="../../assets/css/atlantis.min.css">
 	<!-- CSS Just for demo purpose, don't include it in your project -->
 	<link rel="stylesheet" href="../../assets/css/demo.css">
 </head>
-
 <body>
-<div class="wrapper">
+	<div class="wrapper">
 		<div class="main-header">
 			<!-- Logo Header -->
 			<div class="logo-header" data-background-color="blue">
@@ -174,7 +175,7 @@ if( !isset($_SESSION['nama']) ){
 						
 						
 						
-					<li class="nav-item dropdown hidden-caret">
+						<li class="nav-item dropdown hidden-caret">
 							<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false">
 								<div class="avatar-sm">
 									<img src="../../assets/img/img.jpg" alt="..." class="avatar-img rounded-circle">
@@ -206,9 +207,13 @@ if( !isset($_SESSION['nama']) ){
 		</div>
 		<!-- Sidebar -->
 		<div class="sidebar sidebar-style-2">
+			
 			<div class="sidebar-wrapper scrollbar scrollbar-inner">
 				<div class="sidebar-content">
-					<div class="user" style="margin-bottom: 10px; padding-bottom: 20px;">
+					<div class="user" style="
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+">
 						<div class="avatar-sm float-left mr-2">
 							<img src="../../assets/img/img.jpg" alt="..." class="avatar-img rounded-circle">
 						</div>
@@ -228,13 +233,13 @@ if( !isset($_SESSION['nama']) ){
 								<span class="sub-item">Dashboard</span>
 							</a>
 						</li>
-						<li class="nav-item active submenu">
+						<li class="nav-item">
 							<a href="../forms/forms.php">
 								<i class="fas fa-pen-square"></i>
 								<p>Forms</p>
 							</a>
 						</li>
-						<li class="nav-item">
+						<li class="nav-item active submenu">
 							<a href="../tables/datatables.php">
 								<i class="fas fa-table"></i>
 								<p>Tables</p>
@@ -248,7 +253,7 @@ if( !isset($_SESSION['nama']) ){
 			<div class="content">
 				<div class="page-inner">
 					<div class="page-header">
-						<h4 class="page-title">Forms</h4>
+						<h4 class="page-title">Table</h4>
 						<ul class="breadcrumbs">
 							<li class="nav-home">
 								<a href="../index.php">
@@ -259,7 +264,7 @@ if( !isset($_SESSION['nama']) ){
 								<i class="flaticon-right-arrow"></i>
 							</li>
 							<li class="nav-item">
-								<a href="#">Forms</a>
+								<a href="#">Tables</a>
 							</li>
 							<li class="separator">
 								<i class="flaticon-right-arrow"></i>
@@ -278,7 +283,7 @@ if( !isset($_SESSION['nama']) ){
 									</div>
 								</div>
 								<div class="card-body">
-									<!-- Modal -->
+								<!-- Modal -->
 									<div class="modal fade" id="addRowModal" tabindex="-1" role="dialog" aria-hidden="true">
 										<div class="modal-dialog" role="document">
 											<div class="modal-content">
@@ -498,7 +503,6 @@ if( !isset($_SESSION['nama']) ){
 											</div>
 										</div>
 									</div>
-
 									<div class="table-responsive">
 										<table id="add-row" class="display table table-striiped table-hover" >
 										<thead>
@@ -615,10 +619,6 @@ if( !isset($_SESSION['nama']) ){
 										<a href="detail.php" style="color: #FFF;">DOWNLOAD DATA
 										</a></button>
 										</table>					
-<<<<<<< HEAD
-=======
-
->>>>>>> 83eb241b936f55d767ec384c9336d17d26efda33
 									</div>
 								</div>
 							</div>
