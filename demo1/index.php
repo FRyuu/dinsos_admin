@@ -14,7 +14,7 @@ if( !isset($_SESSION['nama']) ){
 <!DOCTYPE html>
 <html class="wf-flaticon-n4-inactive wf-lato-n3-active wf-lato-n4-active wf-lato-n7-active wf-lato-n9-active wf-fontawesome5solid-n4-active wf-fontawesome5regular-n4-active wf-fontawesome5brands-n4-active wf-simplelineicons-n4-active wf-active"><head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<title>Dinsos Web</title>
+	<title>Atlantis Lite Bootstrap Dashboard</title>
 	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no" name="viewport">
 	<link rel="icon" href="../assets/img/icon1.png" type="image/x-icon">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -66,7 +66,9 @@ if( !isset($_SESSION['nama']) ){
 				<div class="container-fluid">
 					<div class="collapse" id="search-nav">
 						<form class="navbar-left navbar-form nav-search mr-md-3">
-							<div class="input-group" style="width: 600px;">
+							<div class="input-group" style="
+    width: 600px;
+">
 								<div class="input-group-prepend">
 									<button type="submit" class="btn btn-search pr-1">
 										<i class="fa fa-search search-icon"></i>
@@ -117,12 +119,12 @@ if( !isset($_SESSION['nama']) ){
 		<div class="sidebar sidebar-style-2">			
 			<div class="scroll-wrapper sidebar-wrapper scrollbar scrollbar-inner" style="position: relative;"><div class="sidebar-wrapper scrollbar scrollbar-inner scroll-content" style="height: 634px; margin-bottom: 0px; margin-right: 0px; max-height: none;">
 				<div class="sidebar-content">
-					<div class="user" style="margin-bottom: 10px;padding-bottom: 20px;">
+					<div class="user">
 						<div class="avatar-sm float-left mr-2">
 							<img src="../assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle">
 						</div>
 						<div class="info">
-							<a data-toggle="collapse" href="#collapseExample" aria-expanded="false" class="collapsed">
+							<a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
 								<span>
 								<?php echo $_SESSION['nama']; ?>
 									<span class="user-level"></span>
@@ -148,7 +150,8 @@ if( !isset($_SESSION['nama']) ){
 								<i class="fas fa-table"></i>
 								<p>Tables</p>
 							</a>
-						</li>						
+						</li>
+						
 						
 						
 					</ul>
@@ -157,73 +160,46 @@ if( !isset($_SESSION['nama']) ){
 		</div>
 		<div class="main-panel">
 			<div class="content">
-				
-				<div class="page-inner">
-					<!-- Card -->
-					<h4 class="page-title">Dashboard</h4>
-					<div class="row">
-						<div class="col-xl-4 col-md-3">
-							<div class="card card-stats card-primary card-round">
-								<div class="card-body">
-									<div class="row">
-										<div class="col-5">
-											<div class="icon-big text-center">
-												<i class="flaticon-users"></i>
-											</div>
-										</div>
-										<div class="col-7col-stats">
-											<div class="numbers">
-												<p class="card-category">Data Disabilitas</p>
-												<h4 class="card-title">1,294</h4>
-											</div>
-										</div>
-									</div>
-								</div>
+				<div class="panel-header bg-primary-gradient">
+					<div class="page-inner py-5">
+						<div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
+							<div>
+								<h2 class="text-white pb-2 fw-bold">Dashboard</h2>
+								<h5 class="text-white op-7 mb-2">Free Bootstrap 4 Admin Dashboard</h5>
 							</div>
 						</div>
-						<div class="col-xl-4 col-md-3">
-							<div class="card card-stats card-info card-round">
-								<div class="card-body">
-									<div class="row">
-										<div class="col-5">
-											<div class="icon-big text-center">
-												<i class="flaticon-interface-6"></i>
-											</div>
-										</div>
-										<div class="col-7 col-stats">
-											<div class="numbers">
-												<p class="card-category">Lengkap</p>
-												<h4 class="card-title">1303</h4>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-xl-4 col-md-3">
-							<div class="card card-stats card-success card-round">
-								<div class="card-body ">
-									<div class="row">
-										<div class="col-5">
-											<div class="icon-big text-center">
-												<i class="flaticon-analytics"></i>
-											</div>
-										</div>
-										<div class="col-7 col-stats">
-											<div class="numbers">
-												<p class="card-category">Menerima Bantuan</p>
-												<h4 class="card-title">$ 1,345</h4>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>						
 					</div>
 				</div>
+				
 			</div>
+			<footer class="footer">
+				<div class="container-fluid">
+					<nav class="pull-left">
+						<ul class="nav">
+							<li class="nav-item">
+								<a class="nav-link" href="https://www.themekita.com">
+									ThemeKita
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#">
+									Help
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#">
+									Licenses
+								</a>
+							</li>
+						</ul>
+					</nav>
+					<div class="copyright ml-auto">
+						2018, made with <i class="fa fa-heart heart text-danger"></i> by <a href="https://www.themekita.com">ThemeKita</a>
+					</div>				
+				</div>
+			</footer>
 		</div>
-	</div>
+</div>
 
 
 <script src="../assets/js/core/jquery.3.2.1.min.js"></script>
