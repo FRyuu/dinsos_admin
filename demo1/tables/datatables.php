@@ -843,7 +843,7 @@
 				</div>
 			</div>
 		</div>
-		<!-- End Custom template -->
+		<!-- End Custom template ok-->
 	</div>
 	<!--   Core JS Files   -->
 	<script src="../../assets/js/core/jquery.3.2.1.min.js"></script>
