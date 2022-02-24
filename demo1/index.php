@@ -1,14 +1,13 @@
 <?php
 //inisialisasi session
 session_start();
- 
 //mengecek username pada session
 if( !isset($_SESSION['nama']) ){
 	
 	$_SESSION['msg'] = 'anda harus login untuk mengakses halaman ini';
-  header('Location: login.php');
+header('Location: login.php');
 }
- 
+
 ?>
 
 <!DOCTYPE html>
@@ -65,18 +64,7 @@ if( !isset($_SESSION['nama']) ){
 				
 				<div class="container-fluid">
 					<div class="collapse" id="search-nav">
-						<form class="navbar-left navbar-form nav-search mr-md-3">
-							<div class="input-group" style="
-    width: 600px;
-">
-								<div class="input-group-prepend">
-									<button type="submit" class="btn btn-search pr-1">
-										<i class="fa fa-search search-icon"></i>
-									</button>
-								</div>
-								<input type="text" placeholder="Search ..." class="form-control">
-							</div>
-						</form>
+						<form class="navbar-left navbar-form nav-search mr-md-3"></form>
 					</div>
 					<ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
 						<li class="nav-item toggle-nav-search hidden-caret">
@@ -90,14 +78,14 @@ if( !isset($_SESSION['nama']) ){
 						<li class="nav-item dropdown hidden-caret">
 							<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false">
 								<div class="avatar-sm">
-									<img src="../assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle">
+									<img src="../assets/img/img.jpg" alt="..." class="avatar-img rounded-circle">
 								</div>
 							</a>
 							<ul class="dropdown-menu dropdown-user animated fadeIn">
 								<div class="scroll-wrapper dropdown-user-scroll scrollbar-outer" style="position: relative;"><div class="scroll-wrapper dropdown-user-scroll scrollbar-outer scroll-content" style="position: relative;"><div class="dropdown-user-scroll scrollbar-outer scroll-content" style="height: auto; margin-bottom: 0px; margin-right: 0px; max-height: 0px;">
 									<li>
 										<div class="user-box">
-											<div class="avatar-lg"><img src="../assets/img/profile.jpg" alt="image profile" class="avatar-img rounded"></div>
+											<div class="avatar-lg"><img src="../assets/img/img.jpg" alt="image profile" class="avatar-img rounded"></div>
 											<div class="u-text">
 												<h4><?php echo $_SESSION['nama']; ?></h4>
 												<p>Hallo <?php echo $_SESSION['nama']; ?> !! Welcome</p></a>
@@ -121,7 +109,7 @@ if( !isset($_SESSION['nama']) ){
 				<div class="sidebar-content">
 					<div class="user">
 						<div class="avatar-sm float-left mr-2">
-							<img src="../assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle">
+							<img src="../assets/img/img.jpg" alt="..." class="avatar-img rounded-circle">
 						</div>
 						<div class="info">
 							<a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
@@ -164,11 +152,14 @@ if( !isset($_SESSION['nama']) ){
 					<div class="page-inner py-5">
 						<div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
 							<div>
-								<h2 class="text-white pb-2 fw-bold">Dashboard</h2>
-								<h5 class="text-white op-7 mb-2">Free Bootstrap 4 Admin Dashboard</h5>
+								<h2 class="text-white pb-2 fw-bold">Selamat Datang Di Website Dinas Sosial Kota Tanjungpinang</h2>
 							</div>
 						</div>
-					</div>
+					</div>					
+				</div>
+				<div class="page-inner py-5">
+				<div class="col-md-4">
+						</div>
 				</div>
 				
 			</div>

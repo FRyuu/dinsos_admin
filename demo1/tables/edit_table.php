@@ -1,4 +1,5 @@
 <?php
+session_start();
     include ("../koneksi.php");
     if (isset($_POST['update'])) {
 		$nama =  $_POST['nama']; 
@@ -71,6 +72,14 @@
 
 }   
 ?>
+<?php
+
+if( !isset($_SESSION['nama']) ){
+	
+	//$_SESSION['msg'] = 'anda harus login untuk mengakses halaman ini';
+  //header('Location: login.php');
+}
+?>
 
 
 
@@ -108,7 +117,7 @@
 			<div class="logo-header" data-background-color="blue">
 				
 				<a href="../index.php" class="logo">
-					<img src="../../assets/img/logo.svg" alt="navbar brand" class="navbar-brand">
+				<img src="../../assets/img/logo.png" alt="navbar brand" class="navbar-brand" style="width: 3.5rem;">
 				</a>
 				<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon">
@@ -129,16 +138,7 @@
 				
 				<div class="container-fluid">
 					<div class="collapse" id="search-nav">
-						<form class="navbar-left navbar-form nav-search mr-md-3">
-							<div class="input-group" style="width: 600px;">
-								<div class="input-group-prepend">
-									<button type="submit" class="btn btn-search pr-1">
-										<i class="fa fa-search search-icon"></i>
-									</button>
-								</div>
-								<input type="text" placeholder="Search ..." class="form-control">
-							</div>
-						</form>
+						<form class="navbar-left navbar-form nav-search mr-md-3"></form>
 					</div>
 					<ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
 						<li class="nav-item toggle-nav-search hidden-caret">
@@ -152,7 +152,7 @@
 						<li class="nav-item dropdown hidden-caret">
 							<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false">
 								<div class="avatar-sm">
-									<img src="../../assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle">
+									<img src="../../assets/img/img.jpg" alt="..." class="avatar-img rounded-circle">
 								</div>
 							</a>
 							<ul class="dropdown-menu dropdown-user animated fadeIn">
@@ -160,10 +160,10 @@
 									<li>
 										<div class="user-box">
 											<div class="avatar-lg">
-												<img src="../../assets/img/profile.jpg" alt="image profile" class="avatar-img rounded"></div>
+												<img src="../../assets/img/img.jpg" alt="image profile" class="avatar-img rounded"></div>
 											<div class="u-text">
-												<h4>Hizrian</h4>
-												<p class="text-muted">hello@example.com</p>
+											<h4><?php echo $_SESSION['nama']; ?></h4>
+												<p>Hallo <?php echo $_SESSION['nama']; ?> !! Welcome</p></a>
 											</div>
 										</div>
 									</li>
@@ -185,13 +185,13 @@
 				<div class="sidebar-content">
 					<div class="user">
 						<div class="avatar-sm float-left mr-2">
-							<img src="../../assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle">
+							<img src="../../assets/img/img.jpg" alt="..." class="avatar-img rounded-circle">
 						</div>
 						<div class="info">
 							<a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
 								<span>
-									Hizrian
-									<span class="user-level">Administrator</span>
+								<?php echo $_SESSION['nama']; ?>
+									<span class="user-level"></span>
 								</span>
 							</a>
 						</div>
@@ -432,7 +432,7 @@
 												</div>
 												<div class="form-group">
 													<label for="no_hp">No Hp</label>
-													<input type="number" class="form-control" id="no_hp" placeholder="0812345678910" name="no_hp" value="<?php echo $row['no_hp'] ?>">
+													<input type="text" class="form-control" id="no_hp" value="+62" name="no_hp" value="<?php echo $row['no_hp'] ?>">
 												</div>
 												<div class="pt-4">
 													<button type="submit" name="update" class="btn btn-primary mr-2">Submit</button>
