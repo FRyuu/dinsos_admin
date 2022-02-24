@@ -155,7 +155,6 @@ if( !isset($_SESSION['nama']) ){
 					<div class="page-inner py-5">
 						<div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
 							<div>
-<<<<<<< HEAD
 								<h2 class="text-white pb-2 fw-bold">Selamat Datang Di Website Dinas Sosial Kota Tanjungpinang</h2>
 							</div>
 						</div>
@@ -164,13 +163,6 @@ if( !isset($_SESSION['nama']) ){
 				<div class="page-inner py-5">
 				<div class="col-md-4">
 						</div>
-=======
-								<h2 class="text-white pb-2 fw-bold">Dashboard</h2>
-								<h5 class="text-white op-7 mb-2">Free Bootstrap 4 Admin Dashboard</h5>
-							</div>
-						</div>
-					</div>
->>>>>>> 1bc0a65c3313ab475d9c0f141f4fdcad4fd41d29
 				</div>
 				
 			</div>
