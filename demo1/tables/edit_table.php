@@ -34,7 +34,6 @@ session_start();
 
 
         if ($result) {
-          $log = mysqli_query($connect, "insert into log(log) values('Admin mengedit data_disabilitas dengan nik ".$nik."')");
           echo "<script>
           window.alert('berhasil mengedit data');
           window.location = '../demo1/tables/datatables.php';
