@@ -5,7 +5,7 @@ $pass = "";
 $db = "data_disabilitas";
 
 $connect = mysqli_connect($host, $user, $pass, $db);
-
+//test
 if ($connect) {
 	// echo "Terhubung";
 	return $connect;
