@@ -1,7 +1,108 @@
 <?php
     include ("../koneksi.php");
     $result = mysqli_query($connect, "SELECT * FROM data_disabilitas");
+	
+    if (isset($_POST['submit'])) {
+		$nama =  $_POST['nama']; 
+		$tempat_lahir =  $_POST['tempat_lahir'];
+		$tanggal_lahir =  $_POST['tanggal_lahir'];
+		$umur =  $_POST['umur'];
+		$nik =  $_POST['nik'];
+		$jenis_kelamin =  $_POST['jenis_kelamin'];
+        $jenis_disabilitas =  $_POST['jenis_disabilitas'];
+		$gambaran_disabilitas =  $_POST['gambaran_disabilitas'];
+		$sejak_kapan =  $_POST['sejak_kapan'];
+		$penyebab_disabilitas =  $_POST['penyebab_disabilitas'];
+        $agama =  $_POST['agama'];
+        $pendidikan =  $_POST['pendidikan'];
+        $status_kawin =  $_POST['status_kawin'];
+        $alamat =  $_POST['alamat'];
+		$alamat_domisili =  $_POST['alamat_domisili'];
+        $program_pemerintah =  $_POST['program_pemerintah'];
+        $pekerjaan_disabilitas =  $_POST['pekerjaan_disabilitas'];
+        $pekerjaan_ayah =  $_POST['pekerjaan_ayah'];
+        $pekerjaan_ibu =  $_POST['pekerjaan_ibu'];
+        $penghasilan_disabilitas =  $_POST['penghasilan_disabilitas'];
+        $penghasilan_orangtua =  $_POST['penghasilan_orangtua'];
+        $nama_wali =  $_POST['nama_wali'];
+        $pekerjaan_wali =  $_POST['pekerjaan_wali'];
+		$penghasilan_wali =  $_POST['penghasilan_wali'];
+        $bantuan_ygdibutuhkan =  $_POST['bantuan_ygdibutuhkan'];
+        $ppks_tinggal_bersama =  $_POST['ppks_tinggal_bersama']; 
+		$no_hp =  $_POST['no_hp'];
 
+        $result = mysqli_query($connect, "INSERT INTO data_disabilitas(
+                    nama,
+                    tempat_lahir,
+					tanggal_lahir,
+					umur,
+                    nik,
+                    jenis_kelamin,
+                    jenis_disabilitas,
+                    gambaran_disabilitas,
+                    sejak_kapan,
+                    penyebab_disabilitas,
+                    agama,
+                    pendidikan,
+                    status_kawin,
+                    alamat,
+					alamat_domisili,
+                    program_pemerintah,
+                    pekerjaan_disabilitas,
+                    pekerjaan_ayah,
+                    pekerjaan_ibu,
+                    penghasilan_disabilitas,
+                    penghasilan_orangtua,
+                    nama_wali,
+                    pekerjaan_wali,
+					penghasilan_wali,
+                    bantuan_ygdibutuhkan,
+                    ppks_tinggal_bersama,
+					no_hp)
+                    VALUES(
+                    '$nama',
+                    '$tempat_lahir',
+					'$tanggal_lahir',
+					'$umur',
+                    '$nik',
+                    '$jenis_kelamin',
+                    '$jenis_disabilitas',
+                    '$gambaran_disabilitas',
+                    '$sejak_kapan',
+                    '$penyebab_disabilitas',
+                    '$agama',
+                    '$pendidikan',
+                    '$status_kawin',
+                    '$alamat',
+					'$alamat_domisili',
+                    '$program_pemerintah',
+                    '$pekerjaan_disabilitas',
+                    '$pekerjaan_ayah',
+                    '$pekerjaan_ibu',
+                    '$penghasilan_disabilitas',
+                    '$penghasilan_orangtua',
+                    '$nama_wali',
+                    '$pekerjaan_wali',
+					'$penghasilan_wali',
+                    '$bantuan_ygdibutuhkan',
+                    '$ppks_tinggal_bersama'
+					'$no_hp')
+                    "
+        );
+    if ($result) {
+    $log = mysqli_query($connect, "insert into log(log) values('Admin menambahkan data disabilitas dengan nik".$nik." dari nama ".$nama."')");
+    echo "<script>
+    window.alert('Data Berhasil Disimpan');
+    window.location = '../tables/datatables.php';
+    </script>";
+    }   
+    else {
+    echo '<script>
+    window.alert("gagal");
+    </script>';
+    } 
+
+}   
 
 
 ?> 
@@ -359,7 +460,7 @@
 			<div class="content">
 				<div class="page-inner">
 					<div class="page-header">
-						<h4 class="page-title">DataTables.Net</h4>
+						<h4 class="page-title">Data Disabilitas</h4>
 						<ul class="breadcrumbs">
 							<li class="nav-home">
 								<a href="#">
@@ -385,10 +486,10 @@
 							<div class="card">
 								<div class="card-header">
 									<div class="d-flex align-items-center">
-										<h4 class="card-title">Add Row</h4>
+										<h4 class="card-title">Tabel Daftar Data Disabilitas</h4>
 										<button class="btn btn-primary btn-round ml-auto" data-toggle="modal" data-target="#addRowModal">
 											<i class="fa fa-plus"></i>
-											Add Row
+											Tambah Data
 										</button>
 									</div>
 								</div>
@@ -400,9 +501,9 @@
 												<div class="modal-header no-bd">
 													<h5 class="modal-title">
 														<span class="fw-mediumbold">
-														New</span> 
+														Tambah</span> 
 														<span class="fw-light">
-															Row
+														Data
 														</span>
 													</h5>
 													<button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -411,176 +512,204 @@
 												</div>
 												<div class="modal-body">
 													<p class="small">Create a new row using this form, make sure you fill them all</p>
-													<form>
+													<form action="" method="post">
 														<div class="row">
 															<div class="col-sm-12">
 																<div class="form-group form-group-default">
 																	<label>Nama</label>
-																	<input id="nama" type="text" class="form-control" placeholder="Isi nama">
+																	<input id="nama" type="text" class="form-control" placeholder="Isi nama" name="nama">
 																</div>
 															</div>
 															<div class="col-md-6 pr-0">
 																<div class="form-group form-group-default">
 																	<label>Tempat lahir</label>
-																	<input id="tempat_lahir" type="text" class="form-control" placeholder="isi Tempat Lahir">
+																	<input id="tempat_lahir" type="text" class="form-control" placeholder="isi Tempat Lahir" name="tempat_lahir">
 																</div>
 															</div>
 															<div class="col-md-6">
 																<div class="form-group form-group-default">
 																	<label>Tanggal Lahir</label>
-																	<input id="tanggal_lahir" type="date" class="form-control" placeholder="fill office">
+																	<input id="tanggal_lahir" type="date" class="form-control" placeholder="fill office" name="tanggal_lahir">
 																</div>
 															</div>
 															<div class="col-md-6">
 																<div class="form-group form-group-default">
 																	<label>Umur</label>
-																	<input type="number" class="form-control" placeholder="1" id="umur">
+																	<input type="number" class="form-control" placeholder="1" id="umur" name="umur">
 																</div>
 															</div>
 															<div class="col-md-6">
 																<div class="form-group form-group-defaut">
 																	<label>NIK</label>
-																	<input type="number" class="form-control" id="nik" placeholder="No NIK Sesuai KK">
+																	<input type="number" class="form-control" id="nik" placeholder="No NIK Sesuai KK" name="nik"> 
 																</div>
 															</div>
-															<div class="col-md-6">
-																<div class="form-group form-group-defaut">
-																	<label>Jenis Kelamin</label>
-																	<input type="text" class="form-control" id="jenis_kelamin">
+															<div class="form-group">
+																<label class="form-label">Jenis Kelamin</label>
+																<div class="selectgroup w-100">
+																	<label class="selectgroup-item" id="jenis_kelamin"  name="jenis_kelamin">
+																		<input type="radio" name="value" value="50" class="selectgroup-input" checked="">
+																		<span class="selectgroup-button">Laki-Laki</span>
+																	</label>
+																	<label class="selectgroup-item" id="jenis_kelamin"  name="jenis_kelamin">
+																		<input type="radio" name="value" value="100" class="selectgroup-input">
+																		<span class="selectgroup-button">Perempuan</span>
+																	</label>
 																</div>
-															</div>
-															<div class="col-md-6">
-																<div class="form-group form-group-defaut">
-																	<label>Jenis Disabilitas</label>
-																	<input type="text" class="form-control" id="jenis_disabilitas">
-																</div>
+															</div>	
+															<div class="form-group">
+																<label for="jenis_disabilitas">Jenis Disabilitas</label>
+																<select class="form-control" id="jenis_disabilitas" name="jenis_disabilitas">
+																	<option>-</option>
+																	<option>PDFSK (Penyandang Disabilitas Fisik) </option>
+																	<option>PDINT (Penyandang Disabilitas Intelektual)</option>
+																	<option>PDMTL (Penyandang Disabilitas Mental) </option>
+																	<option>PDSNS (Penyandang Disabilitas Sensorik) </option>
+																</select>
 															</div>
 															<div class="col-md-6">
 																<div class="form-group form-group-defaut">
 																	<label>Gambaran Disabilitas</label>
-																	<input type="text" class="form-control file-upload-info">
+																	<input type="text" class="form-control file-upload-info"  id="gambaran_disabilitas" name="gambaran_disabilitas">
 																</div>
 															</div>
 															<div class="col-md-6">
 																<div class="form-group form-group-defaut">
 																	<label>Sejak Kapan</label>
-																	<input type="date" class="form-control" id="sejak_kapan">
+																	<input type="date" class="form-control" id="sejak_kapan" name="sejak_kapan">
 																</div>
 															</div>
 															<div class="col-md-6">
 																<div class="form-group form-group-defaut">
 																	<label>Penyebab Disabilitas</label>
-																	<input type="text" class="form-control" id="penyebab_disabilitas">											
+																	<input type="text" class="form-control" id="penyebab_disabilitas" name="penyebab_disabilitas">											
 																</div>
 															</div>
-															<div class="col-md-6">
-																<div class="form-group form-group-defaut">
-																	<label>Agama</label>
-																	<input type="text" class="form-control" id="agama">
-																</div>
+															<div class="form-group">
+															<label for="agama">Agama</label>
+															<select class="form-control" id="agama" name="agama">
+																<option>-</option>
+																<option>Islam</option>
+																<option>Protestan</option>
+																<option>Katolik</option>
+																<option>Hindu</option>
+																<option>Buddha</option>
+															</select>
 															</div>
-															<div class="col-md-6">
-																<div class="form-group form-group-defaut">
-																	<label>Pendidikan Terakhir</label>
-																	<input type="text" class="form-control" id="pendidikan">
-																</div>
+															<div class="form-group">
+																<label for="pendidikan">Pendidikan Terakhir</label>
+																<select class="form-control" id="pendidikan" name="pendidikan">
+																	<option>TIDAK / BELUM SEKOLAH</option>
+																	<option>TAMAT SD / SEDERAJAT</option>
+																	<option>TIDAK TAMAT SD / SEDERAJAT</option>
+																	<option>SLTA / SEDERAJAT</option>
+																	<option>SLTP/SEDERAJAT</option>
+																	<option>DIPLOMA I / II</option>
+																	<option>AKADEMI/ DIPLOMA III/S. MUDA</option>
+																	<option>DIPLOMA IV/ STRATA I</option>
+																	<option>STRATA II</option>
+																	<option>STRATA III</option>
+																</select>
 															</div>
-															<div class="col-md-6">
-																<div class="form-group form-group-defaut">
-																	<label>Status Kawin</label>
-																	<select type="text" class="form-control" id="status_kawin">
-																</div>
+															<div class="form-group">
+																<label for="status_kawin">Status Kawin</label>
+																<select class="form-control" id="status_kawin" name="status_kawin">
+																	<option>Belum Kawin</option>
+																	<option>Kawin</option>
+																	<option>Cerai Hidup</option>
+																	<option>Cerai Mati</option>
+																</select>
 															</div>
 															<div class="col-md-6">
 																<div class="form-group form-group-defaut">
 																	<label>Alamat</label>
-																	<input type="text" class="form-control" id="alamat" placeholder="Alamat Sesuai KK">
+																	<input type="text" class="form-control" id="alamat" placeholder="Alamat Saat Ini" name="alamat">
 																</div>
 															</div>
 															<div class="col-md-6">
 																<div class="form-group form-group-defaut">
 																	<label>Alamat Domisili</label>
-																	<input type="text" class="form-control" id="alamat_domisili">
+																	<input type="text" class="form-control" id="alamat_domisili" placeholder="Alamat Sesuai KK" name="alamat_domisili">
 																</div>
 															</div>
 															<div class="col-md-6">
 																<div class="form-group form-group-defaut">
 																	<label>Program Bantuan Pemerintah</label>
-																	<input type="text" class="form-control" id="program_pemerintah">
+																	<input type="text" class="form-control" id="program_pemerintah" name="program_pemerintah">
 																</div>
 															</div>
 															<div class="col-md-6">
 																<div class="form-group form-group-defaut">
 																	<label>Pekerjaan Disabilitas</label>
-																	<input type="text" class="form-control" id="pekerjaan_disabilitas" placeholder="Pekerjaan Sesuai KK">
+																	<input type="text" class="form-control" id="pekerjaan_disabilitas" placeholder="Pekerjaan Sesuai KK" name="pekerjaan_disabilitas">
 																</div>
 															</div>
 															<div class="col-md-6">
 																<div class="form-group form-group-defaut">
 																	<label>Pekerjaan Ayah</label>
-																	<input type="text" class="form-control" id="pekerjaan_ayah" placeholder="Pekerjaan Sesuai KK">
+																	<input type="text" class="form-control" id="pekerjaan_ayah" placeholder="Pekerjaan Sesuai KK" name="pekerjaan_ayah">
 																</div>
 															</div>
 															<div class="col-md-6">
 																<div class="form-group form-group-defaut">
 																	<label>Pekerjaan Ibu</label>
-																	<input type="text" class="form-control" id="pekerjaan_ibu" placeholder="Pekerjaan Sesuai KK">
+																	<input type="text" class="form-control" id="pekerjaan_ibu" placeholder="Pekerjaan Sesuai KK" name="pekerjaan_ibu">
 																</div>
 															</div>
 															<div class="col-md-6">
 																<div class="form-group form-group-defaut">
 																	<label>Penghasilan Disabilitas</label>
-																	<input type="number" class="form-control" id="penghasilan_disabilitas">
+																	<input type="number" class="form-control" id="penghasilan_disabilitas" name="penghasilan_disabilitas">
 																</div>
 															</div>
 															<div class="col-md-6">
 																<div class="form-group form-group-defaut">
 																	<label>Penghasilan Orang Tua</label>
-																	<input type="number" class="form-control" id="penghasilan_orangtua">
+																	<input type="number" class="form-control" id="penghasilan_orangtua" name="penghasilan_orangtua">
 																</div>
 															</div>
 															<div class="col-md-6">
 																<div class="form-group form-group-defaut">
 																	<label>Nama Wali</label>
-																	<input type="text" class="form-control" id="nama_wali" placeholder="Jika Ada">
+																	<input type="text" class="form-control" id="nama_wali" placeholder="Jika Ada" name="nama_wali">
 																</div>
 															</div>
 															<div class="col-md-6">
 																<div class="form-group form-group-defaut">
 																	<label>Pekerjaan Wali</label>
-																	<input type="text" class="form-control" id="pekerjaan_wali" placeholder="Pekerjaan Wali Jika ada">
+																	<input type="text" class="form-control" id="pekerjaan_wali" placeholder="Pekerjaan Wali Jika ada" name="pekerjaan_wali">
 																</div>
 															</div>
 															<div class="col-md-6">
 																<div class="form-group form-group-defaut">
 																	<label>Penghasilan Wali</label>
-																	<input type="number" class="form-control" aria-label="banyak (dalam bentuk rupiah)" id="penghasilan_wali">
+																	<input type="number" class="form-control" aria-label="banyak (dalam bentuk rupiah)" id="penghasilan_wali" name="penghasilan_wali">
 																</div>
 															</div>
 															<div class="col-md-6">
 																<div class="form-group form-group-defaut">
 																	<label>Bantuan yg Dibutuhkan</label>
-																	<input type="text" class="form-control" id="bantuan_ygdibutuhkan">
+																	<input type="text" class="form-control" id="bantuan_ygdibutuhkan" name="bantuan_ygdibutuhkan">
 																</div>
 															</div>
 															<div class="col-md-6">
 																<div class="form-group form-group-defaut">
 																	<label>PPKS Tinggal Bersama</label>
-																	<input type="text" class="form-control" id="ppks_tinggal_bersama">
+																	<input type="text" class="form-control" id="ppks_tinggal_bersama" name="ppks_tinggal_bersama">
 																</div>
 															</div>
 															<div class="col-md-6">
 																<div class="form-group form-group-defaut">
 																	<label>No Hp</label>
-																	<input type="number" class="form-control" id="no_hp" placeholder="0812345678910">
+																	<input type="number" class="form-control" id="no_hp" placeholder="0812345678910" name="no_hp">
 																</div>
 															</div>															
 														</div>
+														<div class="modal-footer no-bd">
+																<button type="button" class="btn btn-primary" name="submit">Tambah</button>
+																<button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+														</div>
 													</form>
-												</div>
-												<div class="modal-footer no-bd">
-													<button type="button" id="addRowButton" class="btn btn-primary">Add</button>
-													<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
 												</div>
 											</div>
 										</div>
@@ -589,39 +718,40 @@
 									<div class="table-responsive">
 										<table id="add-row" class="display table table-striiped table-hover" >
 										<thead>
-											<tr role="row"><th rowspan="1" colspan="1">Nama</th><th rowspan="1" colspan="1">Tempat Lahir</th><th rowspan="1" colspan="1">Tanggal Lahir</th><th rowspan="1" colspan="1">Umur</th><th rowspan="1" colspan="1">NIK</th><th rowspan="1" colspan="1">Jenis Kelamin</th><th rowspan="1" colspan="1">Jenis Disabilitas</th><th rowspan="1" colspan="1">Gambaran Disabilitas</th><th rowspan="1" colspan="1">Sejak Kapan</th><th rowspan="1" colspan="1">Penyebab Disabilitas</th><th rowspan="1" colspan="1">Agama</th><th rowspan="1" colspan="1">Pendidikan Terakhir</th><th rowspan="1" colspan="1">Status Kawin</th><th rowspan="1" colspan="1">Alamat</th><th rowspan="1" colspan="1">Alamat Domisili</th><th rowspan="1" colspan="1">Program Bantuan Pemerintah</th><th rowspan="1" colspan="1">Pekerjaan Disabilitas</th><th rowspan="1" colspan="1">Pekerjaan Ayah</th><th rowspan="1" colspan="1">Pekerjaan Ibu</th><th rowspan="1" colspan="1">Penghasilan Disabilitas</th><th rowspan="1" colspan="1">Penghasilan Orang Tua</th><th rowspan="1" colspan="1">Nama Wali</th><th rowspan="1" colspan="1">Pekerjaan Wali</th><th rowspan="1" colspan="1">Penghasilan Wali</th><th rowspan="1" colspan="1">Bantuan yg Dibutuhkan</th><th rowspan="1" colspan="1">PPKS Tinggal Bersama</th><th rowspan="1" colspan="1">No Hp</th><th rowspan="1" colspan="1" style="padding: 0 3rem !important;">Aksi </th></tr>
-                                                </thead>
-												<tr>
-													<th>Nama</th>
-													<th>Tempat Lahir</th>
-													<th>Tanggal Lahir</th>
-													<th>Umur</th>
-													<th>NIK</th>
-													<th>Jenis Kelamin</th>
-													<th>Jenis Disabilitas</th>
-													<th>Gambaran Disabilitas</th>
-													<th>Sejak Kapan</th>
-													<th>Penyebab Disabilitas</th>
-													<th>Agama</th>
-													<th>Pendidikan Terakhir</th>
-													<th>Status Kawin</th>
-													<th>Alamat</th>
-													<th>Alamat Domisili</th>
-													<th>Program Bantuan Pemerintah</th>
-													<th>Pekerjaan Disabilitas</th>
-													<th>Pekerjaan Ayah</th>
-													<th>Pekerjaan Ibu</th>
-													<th>Penghasilan Disabilitas</th>
-													<th>Penghasilan Orang Tua</th>
-													<th>Nama Wali</th>
-													<th>Pekerjaan Wali</th>
-													<th>Penghasilan Wali</th>
-													<th>Bantuan yg Dibutuhkan</th>
-													<th>PPKS Tinggal Bersama</th>
-													<th>No Hp</th>
-													<th>Aksi </th>
-												</tr>
-											<?php if (mysqli_num_rows($result) > 0) {
+											<tr>
+												<th>Nama</th>
+												<th>Tempat Lahir</th>
+												<th>Tanggal Lahir</th>
+												<th>Umur</th>
+												<th>NIK</th>
+												<th>Jenis Kelamin</th>
+												<th>Jenis Disabilitas</th>
+												<th>Gambaran Disabilitas</th>
+												<th>Sejak Kapan</th>
+												<th>Penyebab Disabilitas</th>
+												<th>Agama</th>
+												<th>Pendidikan Terakhir</th>
+												<th>Status Kawin</th>
+												<th>Alamat</th>
+												<th>Alamat Domisili</th>
+												<th>Program Bantuan Pemerintah</th>
+												<th>Pekerjaan Disabilitas</th>
+												<th>Pekerjaan Ayah</th>
+												<th>Pekerjaan Ibu</th>
+												<th>Penghasilan Disabilitas</th>
+												<th>Penghasilan Orang Tua</th>
+												<th>Nama Wali</th>
+												<th>Pekerjaan Wali</th>
+												<th>Penghasilan Wali</th>
+												<th>Bantuan yg Dibutuhkan</th>
+												<th>PPKS Tinggal Bersama</th>
+												<th>No Hp</th>
+												<th>Aksi </th>
+											</tr>
+                                        </thead>
+											<!--isi dari data-->
+										<tbody>
+										<?php if (mysqli_num_rows($result) > 0) {
                                                 while($row = mysqli_fetch_assoc($result)) {
                                                 ?>
                                                 <tr>
@@ -652,22 +782,18 @@
                                                     <td><?php echo $row['bantuan_ygdibutuhkan']; ?></td>
                                                     <td><?php echo $row['ppks_tinggal_bersama']; ?></td>
 													<td><?php echo $row['no_hp']; ?></td>
+													<td style="text-align: center;">
+														<a class='btn btn-info btn-xs' href="edit_table.php?nik=<?php echo $row['nik'] ?>" class=""> <i class="mdi mdi-table-edit icon-sm"></i></a>
+														<a class='btn btn-danger btn-xs' href="hapus_table.php?nik=<?php echo $row['nik'] ?>" class="mdi mdi-delete icon-sm" onclick="return confirm('Yakin ingin menghapus data?')";><i class="mdi mdi-delete icon-sm"></i>
+														</a>
+													</td>
 												</tr>
-                                            <td style="text-align: center;">
-                                                
-												<a class='btn btn-info btn-xs' href="edit_table.php?nik=<?php echo $row['nik'] ?>" class=""> <i class="mdi mdi-table-edit icon-sm"></i></a>
-                                                <a class='btn btn-danger btn-xs' href="hapus_table.php?nik=<?php echo $row['nik'] ?>" class="mdi mdi-delete icon-sm" onclick="return confirm('Yakin ingin menghapus data?')";><i class="mdi mdi-delete icon-sm"></i>
-                                                </a>
-                                            </td>
-                                            </tr>
                                                 <?php
                                                 }
                                             } else {
                                                 echo "Maaf Database error, silahkan hubungi pihak Dinas Sosial";
                                             } ?>
-                                        </thead>
-											<!--isi dari data-->
-
+										</tbody>
 											<!--end isi data-->
 										</table>
 									</div>
