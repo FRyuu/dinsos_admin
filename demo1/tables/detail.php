@@ -1,5 +1,5 @@
 <?php
-session_start();
+
     include ("../koneksi.php");
     $result = mysqli_query($connect, "SELECT * FROM data_disabilitas");
 	
@@ -91,6 +91,7 @@ session_start();
                     "
         );
     if ($result) {
+    $log = mysqli_query($connect, "insert into log(log) values('Admin menambahkan data disabilitas dengan nik".$nik." dari nama ".$nama."')");
     echo "<script>
     window.alert('Data Berhasil Disimpan');
     window.location = '../demo1/tables/datatables.php';
@@ -103,16 +104,14 @@ session_start();
     } 
 
 }   
+
+
+
 ?> 
 <?php
-
-if( !isset($_SESSION['nama']) ){
-	
-	//$_SESSION['msg'] = 'anda harus login untuk mengakses halaman ini';
-  //header('Location: login.php');
-}
-?>
-
+	header("Content-type: application/vnd-ms-excel");
+	header("Content-Disposition: attachment; filename=Data Disabilitas.xls");
+	?>
 
 
 <!DOCTYPE html>
@@ -124,7 +123,7 @@ if( !isset($_SESSION['nama']) ){
 	<link rel="icon" href="../../assets/img/icon1.png" type="image/x-icon"/>
 	
 	<!-- Fonts and icons -->
-	<link rel="stylesheet" href="../../assets/vendors/mdi/css/materialdesignicons.min.css">
+	<!-- <link rel="stylesheet" href="../../assets/vendors/mdi/css/materialdesignicons.min.css">
 	<script src="../../assets/js/plugin/webfont/webfont.min.js"></script>
 	<script>
 		WebFont.load({
@@ -134,156 +133,28 @@ if( !isset($_SESSION['nama']) ){
 				sessionStorage.fonts = true;
 			}
 		});
-	</script>
+	</script> -->
 	<!-- CSS Files -->
-	<link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
-	<link rel="stylesheet" href="../../assets/css/atlantis.min.css">
+	<!-- <link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../../assets/css/atlantis.min.css"> -->
 	<!-- CSS Just for demo purpose, don't include it in your project -->
-	<link rel="stylesheet" href="../../assets/css/demo.css">
+	<!-- <link rel="stylesheet" href="../../assets/css/demo.css"> -->
 </head>
 <body>
 	<div class="wrapper">
 		<div class="main-header">
-			<!-- Logo Header -->
-			<div class="logo-header" data-background-color="blue">
-				
-				<a href="../index.php" class="logo">
-					<img src="../../assets/img/logo.png" alt="navbar brand" class="navbar-brand" style="width: 3.5rem;">
-				</a>
-				<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon">
-						<i class="icon-menu"></i>
-					</span>
-				</button>
-				<button class="topbar-toggler more"><i class="icon-options-vertical"></i></button>
-				<div class="nav-toggle">
-					<button class="btn btn-toggle toggle-sidebar">
-						<i class="icon-menu"></i>
-					</button>
-				</div>
-			</div>
-			<!-- End Logo Header -->
-			<!-- Navbar Header -->
-			<nav class="navbar navbar-header navbar-expand-lg" data-background-color="blue2">
-				
-				<div class="container-fluid">
-					<div class="collapse" id="search-nav">
-						<form class="navbar-left navbar-form nav-search mr-md-3"></form>
-					</div>
-					<ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
-						
-						
-						
-						
-						<li class="nav-item dropdown hidden-caret">
-							<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false">
-								<div class="avatar-sm">
-									<img src="../../assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle">
-								</div>
-							</a>
-							<ul class="dropdown-menu dropdown-user animated fadeIn">
-								<div class="scroll-wrapper dropdown-user-scroll scrollbar-outer" style="position: relative;"><div class="scroll-wrapper dropdown-user-scroll scrollbar-outer scroll-content" style="position: relative;"><div class="scroll-wrapper dropdown-user-scroll scrollbar-outer scroll-content" style="position: relative;"><div class="dropdown-user-scroll scrollbar-outer scroll-content" style="height: auto; margin-bottom: 0px; margin-right: 0px; max-height: 0px;">
-									<li>
-										<div class="user-box">
-											<div class="avatar-lg">
-												<img src="../../assets/img/profile.jpg" alt="image profile" class="avatar-img rounded"></div>
-											<div class="u-text">
-											<h4><?php echo $_SESSION['nama']; ?></h4>
-												<p>Hallo <?php echo $_SESSION['nama']; ?> !! Welcome</p></a>												
-											</div>
-										</div>
-									</li>
-									<li>
-										<div class="dropdown-divider"></div>
-										<a class="dropdown-item" href="../logout.php">Logout</a>
-									</li>
-								</div><div class="scroll-element scroll-x"><div class="scroll-element_outer"><div class="scroll-element_size"></div><div class="scroll-element_track"></div><div class="scroll-bar ui-draggable ui-draggable-handle"></div></div></div><div class="scroll-element scroll-y"><div class="scroll-element_outer"><div class="scroll-element_size"></div><div class="scroll-element_track"></div><div class="scroll-bar ui-draggable ui-draggable-handle"></div></div></div></div><div class="scroll-element scroll-x"><div class="scroll-element_outer"><div class="scroll-element_size"></div><div class="scroll-element_track"></div><div class="scroll-bar ui-draggable ui-draggable-handle"></div></div></div><div class="scroll-element scroll-y"><div class="scroll-element_outer"><div class="scroll-element_size"></div><div class="scroll-element_track"></div><div class="scroll-bar ui-draggable ui-draggable-handle"></div></div></div></div><div class="scroll-element scroll-x"><div class="scroll-element_outer"><div class="scroll-element_size"></div><div class="scroll-element_track"></div><div class="scroll-bar ui-draggable ui-draggable-handle"></div></div></div><div class="scroll-element scroll-y"><div class="scroll-element_outer"><div class="scroll-element_size"></div><div class="scroll-element_track"></div><div class="scroll-bar ui-draggable ui-draggable-handle"></div></div></div></div>
-							</ul>
-						</li>
-					</ul>
-				</div>
-			</nav>
-			<!-- End Navbar -->
-		</div>
-		<!-- Sidebar -->
-		<div class="sidebar sidebar-style-2">
 			
-			<div class="sidebar-wrapper scrollbar scrollbar-inner">
-				<div class="sidebar-content">
-					<div class="user" style="
-    margin-bottom: 10px;
-    padding-bottom: 20px;
-">
-						<div class="avatar-sm float-left mr-2">
-							<img src="../../assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle">
-						</div>
-						<div class="info">
-							<a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
-							<span>
-								<?php echo $_SESSION['nama']; ?>
-									<span class="user-level"></span>
-								</span>
-							</a>
-						</div>
-					</div>
-					<ul class="nav nav-primary">
-						<li class="nav-item">
-							<a href="../index.php">
-								<i class="fas fa-home"></i>
-								<span class="sub-item">Dashboard</span>
-							</a>
-						</li>
-						<li class="nav-item">
-							<a href="../forms/forms.php">
-								<i class="fas fa-pen-square"></i>
-								<p>Forms</p>
-							</a>
-						</li>
-						<li class="nav-item active submenu">
-							<a href="../tables/datatables.php">
-								<i class="fas fa-table"></i>
-								<p>Tables</p>
-							</a>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-		<div class="main-panel">
-			<div class="content">
-				<div class="page-inner">
-					<div class="page-header">
-						<h4 class="page-title">Table</h4>
-						<ul class="breadcrumbs">
-							<li class="nav-home">
-								<a href="../index.php">
-									<i class="flaticon-home"></i>
-								</a>
-							</li>
-							<li class="separator">
-								<i class="flaticon-right-arrow"></i>
-							</li>
-							<li class="nav-item">
-								<a href="#">Tables</a>
-							</li>
-							<li class="separator">
-								<i class="flaticon-right-arrow"></i>
-							</li>
-							<li class="nav-item">
-								<a href="#">Data Disabilitas</a>
-							</li>
-						</ul>
-					</div>
 					<div class="row">
 						<div class="col-md-12">
 							<div class="card">
 								<div class="card-header">
 									<div class="d-flex align-items-center">
 										<h4 class="card-title">Data Disabilitas</h4>
+										
 									</div>
 								</div>
-								<div class="card-body">
-								<!-- Modal -->
+								<!-- <div class="card-body">
+								Modal 
 									<div class="modal fade" id="addRowModal" tabindex="-1" role="dialog" aria-hidden="true">
 										<div class="modal-dialog" role="document">
 											<div class="modal-content">
@@ -490,7 +361,7 @@ if( !isset($_SESSION['nama']) ){
 															<div class="col-md-6">
 																<div class="form-group form-group-defaut">
 																	<label>No Hp</label>
-																	<input type="text" class="form-control" id="no_hp" value="+62" name="no_hp">
+																	<input type="number" class="form-control" id="no_hp" placeholder="0812345678910" name="no_hp">
 																</div>
 															</div>															
 														</div>
@@ -502,7 +373,7 @@ if( !isset($_SESSION['nama']) ){
 												</div>
 											</div>
 										</div>
-									</div>
+									</div> -->
 									<div class="table-responsive">
 										<table id="add-row" class="display table table-striiped table-hover" >
 										<thead>
@@ -583,7 +454,7 @@ if( !isset($_SESSION['nama']) ){
                                             } ?>
 										</tbody>
 											<!--end isi data-->
-											<tfoot>
+											<!-- <tfoot>
 											<tr>
 												<th rowspan="1" colspan="1">Nama</th>
 												<th rowspan="1" colspan="1">Tempat Lahir</th>
@@ -614,12 +485,13 @@ if( !isset($_SESSION['nama']) ){
 												<th rowspan="1" colspan="1">No Hp</th>
 												<th rowspan="1" colspan="1" style="padding: 0 3rem !important;">Aksi </th>
 											</tr>
-										</tfoot>
-										<button class="btn btn-primary btn-sm" style="margin-bottom: 20px;" >
-										<a href="detail.php" style="color: #FFF;">DOWNLOAD DATA
-										</a></button>
+										</tfoot> -->
+                                        <!-- <button class="btn btn-primary btn-sm" style="margin-bottom: 20px;" onclick="window.print()" >
+										<a href="detail.php" style="color: #FFF;">DETAIL
+										</a></button> -->
 										</table>					
 									</div>
+									
 								</div>
 							</div>
 						</div>
@@ -691,6 +563,22 @@ if( !isset($_SESSION['nama']) ){
 				$('#addRowModal').modal('hide');
 
 			});
+            var css = '@page { size: landscape; }',
+			head = document.head || document.getElementsByTagName('head')[0],
+			style = document.createElement('style');
+
+			style.type = 'text/css';
+			style.media = 'print';
+
+			if (style.styleSheet){
+			style.styleSheet.cssText = css;
+			} else {
+			style.appendChild(document.createTextNode(css));
+			}
+
+			head.appendChild(style);
+
+			// window.print();
 		});
 	</script>
 </body>
