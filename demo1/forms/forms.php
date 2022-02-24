@@ -1,4 +1,5 @@
 <?php
+session_start();
     include ("../koneksi.php");
     if (isset($_POST['submit'])) {
 		$nama =  $_POST['nama']; 
@@ -88,10 +89,10 @@
                     "
         );
 		if ($result) {
-			$log = mysqli_query($connect, "insert into log(log) values('Admin menambahkan data disabilitas dengan nik".$nik." dari nama ".$nama."')");
+			 
 			echo "<script>
 			window.alert('Data Berhasil Ditambahkan');
-			window.location = '../demo1/tables/datatables.php';
+			window.location = '../tables/datatables.php';
 			</script>";
 			}   
 			else {
@@ -101,7 +102,14 @@
 			} 
 }   
 ?>
+<?php
 
+if( !isset($_SESSION['nama']) ){
+	
+	//$_SESSION['msg'] = 'anda harus login untuk mengakses halaman ini';
+  //header('Location: login.php');
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -156,16 +164,7 @@
 				
 				<div class="container-fluid">
 					<div class="collapse" id="search-nav">
-						<form class="navbar-left navbar-form nav-search mr-md-3">
-							<div class="input-group" style="width: 600px;">
-								<div class="input-group-prepend">
-									<button type="submit" class="btn btn-search pr-1">
-										<i class="fa fa-search search-icon"></i>
-									</button>
-								</div>
-								<input type="text" placeholder="Search ..." class="form-control">
-							</div>
-						</form>
+						<form class="navbar-left navbar-form nav-search mr-md-3"></form>
 					</div>
 					<ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
 						
@@ -185,8 +184,8 @@
 											<div class="avatar-lg">
 												<img src="../../assets/img/profile.jpg" alt="image profile" class="avatar-img rounded"></div>
 											<div class="u-text">
-												<h4>Hizrian</h4>
-												<p class="text-muted">hello@example.com</p>
+											<h4><?php echo $_SESSION['nama']; ?></h4>
+												<p>Hallo <?php echo $_SESSION['nama']; ?> !! Welcome</p></a>
 											</div>
 										</div>
 									</li>
@@ -194,7 +193,49 @@
 										<div class="dropdown-divider"></div>
 										<a class="dropdown-item" href="../logout.php">Logout</a>
 									</li>
-								</div><div class="scroll-element scroll-x"><div class="scroll-element_outer"><div class="scroll-element_size"></div><div class="scroll-element_track"></div><div class="scroll-bar ui-draggable ui-draggable-handle"></div></div></div><div class="scroll-element scroll-y"><div class="scroll-element_outer"><div class="scroll-element_size"></div><div class="scroll-element_track"></div><div class="scroll-bar ui-draggable ui-draggable-handle"></div></div></div></div><div class="scroll-element scroll-x"><div class="scroll-element_outer"><div class="scroll-element_size"></div><div class="scroll-element_track"></div><div class="scroll-bar ui-draggable ui-draggable-handle"></div></div></div><div class="scroll-element scroll-y"><div class="scroll-element_outer"><div class="scroll-element_size"></div><div class="scroll-element_track"></div><div class="scroll-bar ui-draggable ui-draggable-handle"></div></div></div></div><div class="scroll-element scroll-x"><div class="scroll-element_outer"><div class="scroll-element_size"></div><div class="scroll-element_track"></div><div class="scroll-bar ui-draggable ui-draggable-handle"></div></div></div><div class="scroll-element scroll-y"><div class="scroll-element_outer"><div class="scroll-element_size"></div><div class="scroll-element_track"></div><div class="scroll-bar ui-draggable ui-draggable-handle"></div></div></div></div>
+								</div>
+								<div class="scroll-element scroll-x">
+									<div class="scroll-element_outer">
+										<div class="scroll-element_size"></div>
+										<div class="scroll-element_track"></div>
+										<div class="scroll-bar ui-draggable ui-draggable-handle"></div>
+									</div>
+								</div>
+								<div class="scroll-element scroll-y">
+										<div class="scroll-element_outer">
+										<div class="scroll-element_size"></div>
+										<div class="scroll-element_track"></div>
+										<div class="scroll-bar ui-draggable ui-draggable-handle"></div>
+									</div>
+								</div>
+							</div>
+							<div class="scroll-element scroll-x">
+										<div class="scroll-element_outer"><div class="scroll-element_size">
+										</div>
+										<div class="scroll-element_track"></div>
+										<div class="scroll-bar ui-draggable ui-draggable-handle"></div>
+									</div>
+								</div>
+								<div class="scroll-element scroll-y">
+										<div class="scroll-element_outer"><div class="scroll-element_size"></div>
+										<div class="scroll-element_track"></div>
+										<div class="scroll-bar ui-draggable ui-draggable-handle"></div>
+									</div>
+								</div>
+							</div>
+							<div class="scroll-element scroll-x">
+										<div class="scroll-element_outer"><div class="scroll-element_size"></div>
+										<div class="scroll-element_track"></div>
+										<div class="scroll-bar ui-draggable ui-draggable-handle"></div>
+									</div>
+								</div><div class="scroll-element scroll-y">
+										<div class="scroll-element_outer">
+											<div class="scroll-element_size">
+											</div><div class="scroll-element_track"></div>
+											<div class="scroll-bar ui-draggable ui-draggable-handle"></div>
+										</div>
+									</div>
+								</div>
 							</ul>
 						</li>
 					</ul>
@@ -212,8 +253,8 @@
 						</div>
 						<div class="info">
 							<a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
-								<span>
-								Hizrain
+							<span>
+								<?php echo $_SESSION['nama']; ?>
 									<span class="user-level"></span>
 								</span>
 							</a>
@@ -454,7 +495,7 @@
 												</div>
 												<div class="form-group">
 													<label for="no_hp">No Hp</label>
-													<input type="number" class="form-control" id="no_hp" placeholder="0812345678910" name="no_hp">
+													<input type="text" class="form-control" id="no_hp" value="+62" name="no_hp">
 												</div>
 												<div class="pt-4">
 													<button type="submit" name="submit" class="btn btn-primary mr-2">Submit</button>
