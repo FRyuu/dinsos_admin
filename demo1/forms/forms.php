@@ -206,10 +206,7 @@
 		<div class="sidebar sidebar-style-2">
 			<div class="sidebar-wrapper scrollbar scrollbar-inner">
 				<div class="sidebar-content">
-					<div class="user" style="
-    margin-bottom: 10px;
-    padding-bottom: 20px;
-">
+					<div class="user" style="margin-bottom: 10px; padding-bottom: 20px;">
 						<div class="avatar-sm float-left mr-2">
 							<img src="../../assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle">
 						</div>
@@ -252,7 +249,7 @@
 						<h4 class="page-title">Forms</h4>
 						<ul class="breadcrumbs">
 							<li class="nav-home">
-								<a href="../index.html">
+								<a href="../index.php">
 									<i class="flaticon-home"></i>
 								</a>
 							</li>
